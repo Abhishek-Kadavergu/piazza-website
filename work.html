@@ -1,0 +1,1289 @@
+﻿<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Wed Mar 04 2026 14:59:18 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="69a717d0ab0ca944ab3416ea" data-wf-site="69a717cdab0ca944ab3415a3" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Soale - Webflow HTML website template</title>
+  <meta content="Soale - Webflow HTML website template" property="og:title">
+  <meta content="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/691ef4237b127f52d11eb0a5_52071b0bfcd0ec7ba4212745d67f0b0d_Soale%20-%20Open%20Graph.webp" property="og:image">
+  <meta content="Soale - Webflow HTML website template" property="twitter:title">
+  <meta content="https://cdn.prod.website-files.com/6880e261cef3bfa6896ed9d3/691ef4237b127f52d11eb0a5_52071b0bfcd0ec7ba4212745d67f0b0d_Soale%20-%20Open%20Graph.webp" property="twitter:image">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/ptcg.webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/hero-redesign.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- GSAP for premium animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["IBM Plex Mono:300,400,500,600,700","Inter Tight:300,400,500,600,700"]  }});</script>
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <style>
+    /* Page-level background */
+    body.body { background-color: #f0ede5; overflow-x: clip; }
+    html { overflow-x: clip; }
+
+    /* ============================================================
+       PRODUCTS HERO — Intro Section
+       ============================================================ */
+    .products-hero {
+      background: #f0ede5;
+      padding: 160px 0 100px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .products-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: -100px;
+      width: 700px;
+      height: 700px;
+      background: linear-gradient(135deg, #004643 0%, #00665f 100%);
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .products-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      right: -100px;
+      width: 600px;
+      height: 600px;
+      background: linear-gradient(135deg, #004643 0%, #005c56 100%);
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.22;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .products-hero-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .products-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #004643;
+      background: rgba(0,70,67,0.08);
+      border: 1px solid rgba(0,70,67,0.15);
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      visibility: hidden;
+    }
+    .products-hero-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 56px;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.12;
+      margin: 0 0 24px;
+      letter-spacing: -1px;
+      visibility: hidden;
+    }
+    .products-hero-heading span {
+      background: linear-gradient(135deg, #004643, #00897b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .products-hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: #6b7280;
+      line-height: 1.75;
+      max-width: 640px;
+      margin: 0 auto 36px;
+      visibility: hidden;
+    }
+    @media screen and (max-width: 768px) {
+      .products-hero { padding: 130px 0 72px; }
+      .products-hero-heading { font-size: 38px; }
+      .products-hero-sub { font-size: 16px; }
+    }
+    @media screen and (max-width: 480px) {
+      .products-hero { padding: 120px 0 56px; }
+      .products-hero-inner { padding: 0 20px; }
+      .products-hero-heading { font-size: 30px; }
+    }
+
+
+    /* ============================================================
+       SERVICE-GRID STYLE  Products Section (cloned from services.html)
+       ============================================================ */
+
+    /* --- Service Grid Cards --- */
+    .service-grid {
+      background: linear-gradient(170deg, #f1f7f6 0%, #ffffff 40%, #ffffff 100%) !important;
+      border-radius: 28px !important;
+      border: 1px solid rgba(0,70,67,0.08);
+      box-shadow: 0 4px 24px rgba(0,70,67,0.06);
+      max-width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* --- Service Labels (pill style, green tint) --- */
+    .service-label {
+      background-color: rgba(0,70,67,0.05) !important;
+      border: 1px solid rgba(0,70,67,0.12) !important;
+      border-radius: 100px !important;
+      transition: all 0.25s ease;
+    }
+    .service-label:hover {
+      background-color: rgba(0,70,67,0.10) !important;
+      border-color: rgba(0,70,67,0.25) !important;
+    }
+    .service-label .small-paragraph {
+      color: #004643;
+    }
+
+    /* --- Service Section Heading --- */
+    .service-heading-div .h3-heading {
+      color: #004643;
+    }
+
+    /* --- Service Image (smoother corners) --- */
+    .service-image {
+      border-radius: 0 28px 28px 0;
+    }
+
+    /* --- Service Arrow Button (green) --- */
+    .service-grid .button-arrow-icon-div.white-background {
+      background-color: #004643 !important;
+      border-radius: 50%;
+      transition: background-color 0.25s ease;
+    }
+    .service-grid .button-arrow-icon-div.white-background:hover {
+      background-color: #00897b !important;
+    }
+
+    /* --- Service Left Blur (green tint) --- */
+    .service-left-blur-div {
+      background-image: linear-gradient(90deg, #f1f7f6, transparent) !important;
+    }
+
+    /* --- Service Icon Boxes (green tint) --- */
+    .service-icon-box {
+      background: rgba(255,255,255,0.9) !important;
+      border-radius: 16px !important;
+      backdrop-filter: blur(8px);
+    }
+
+    /* --- Service Wrapper (green-themed background) --- */
+    .products-service-wrapper {
+      background-color: #f0ede5 !important;
+      margin-top: 80px;
+    }
+
+    /* --- Products Section Heading --- */
+    .products-section-heading {
+      color: #1a1a1a;
+    }
+
+    /* --- Service Grid hover effect --- */
+    .products-service-wrapper .service-grid {
+      transition: box-shadow 0.4s ease;
+    }
+    .products-service-wrapper .service-grid:hover {
+      box-shadow: 0 12px 48px rgba(0,70,67,0.12);
+    }
+
+    /* Responsive service-grid overrides */
+    @media screen and (max-width: 991px) {
+      .service-grid {
+        max-width: 90%;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .service-grid {
+        max-width: 100%;
+      }
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Premium button micro-interactions */
+    .cta-btn {
+      transition: background 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, transform 0.3s ease;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+    }
+    .cta-btn:active {
+      transform: translateY(0);
+    }
+
+
+    /* FAQ section */
+    .section {
+      position: relative;
+      overflow: clip;
+    }
+    .section::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -150px;
+      width: 550px;
+      height: 550px;
+      background: linear-gradient(135deg, #004643, #00897b);
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .section::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -120px;
+      width: 450px;
+      height: 450px;
+      background: linear-gradient(135deg, #00665f, #004643);
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===== NEWSLETTER / CTA SECTION — LIGHT PREMIUM REDESIGN ===== */
+
+    /* --- Keyframes --- */
+    @keyframes ctaFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes ctaFloat1 {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50%      { transform: translate(20px, -15px) rotate(8deg); }
+    }
+    @keyframes ctaFloat2 {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50%      { transform: translate(-18px, 12px) rotate(-6deg); }
+    }
+    @keyframes ctaFloat3 {
+      0%, 100% { transform: translate(0, 0); }
+      50%      { transform: translate(10px, -20px); }
+    }
+
+    /* --- Section wrapper --- */
+    .section.newsletter-section {
+      background: radial-gradient(ellipse at 50% 40%, rgba(15,81,50,0.06) 0%, rgba(255,255,255,0) 70%), #ffffff !important;
+      position: relative;
+      overflow: hidden;
+      padding-top: 140px !important;
+      padding-bottom: 140px !important;
+    }
+
+    /* Faint grid overlay */
+    .section.newsletter-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: none;
+      background-image:
+        linear-gradient(rgba(15,81,50,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15,81,50,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: auto; height: auto;
+      border-radius: 0;
+      filter: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Floating abstract shapes */
+    .cta-floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .cta-floating-shape.shape-1 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(15,81,50,0.07), transparent 70%);
+      top: -60px; right: -80px;
+      animation: ctaFloat1 8s ease-in-out infinite;
+    }
+    .cta-floating-shape.shape-2 {
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(15,81,50,0.05), transparent 70%);
+      bottom: -40px; left: -60px;
+      animation: ctaFloat2 10s ease-in-out infinite;
+    }
+    .cta-floating-shape.shape-3 {
+      width: 140px; height: 140px;
+      background: radial-gradient(circle, rgba(15,81,50,0.04), transparent 70%);
+      top: 40%; left: 15%;
+      animation: ctaFloat3 12s ease-in-out infinite;
+    }
+
+    /* Huge background text */
+    .cta-bg-text {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Inter', 'Space Grotesk', sans-serif;
+      font-size: clamp(120px, 18vw, 320px);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      color: rgba(15,81,50,0.035);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+      line-height: 1;
+    }
+
+    /* Content sits above decorations */
+    .newsletter-section > .w-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Corporation logo hidden */
+    .newsletter-section .corporation-logo-icon {
+      display: none !important;
+    }
+
+    /* Fade-up animations on children */
+    .newsletter-section .hero-sub-heading-div {
+      animation: ctaFadeUp 0.7s ease both;
+      animation-delay: 0.1s;
+    }
+    .newsletter-section .h1-heading {
+      animation: ctaFadeUp 0.7s ease both;
+      animation-delay: 0.25s;
+    }
+    .newsletter-section .newsletter-paragraph {
+      animation: ctaFadeUp 0.7s ease both;
+      animation-delay: 0.4s;
+    }
+    .newsletter-section .newsletter-button-div {
+      animation: ctaFadeUp 0.7s ease both;
+      animation-delay: 0.55s;
+    }
+
+    /* --- Sub-heading pill (light) --- */
+    .newsletter-section .hero-sub-heading-div {
+      border-color: rgba(15,81,50,0.15) !important;
+      background: rgba(15,81,50,0.06) !important;
+    }
+    .newsletter-section .small-paragraph.white-text {
+      color: #0f5132 !important;
+    }
+    .newsletter-section .sub-heading-icon {
+      filter: brightness(0) saturate(100%) invert(22%) sepia(40%) saturate(900%) hue-rotate(120deg);
+    }
+
+    /* --- Headline: bold gradient text --- */
+    .newsletter-section .h1-heading {
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 800 !important;
+      font-size: clamp(36px, 5vw, 64px) !important;
+      line-height: 1.15 !important;
+      background: linear-gradient(135deg, #0f5132 0%, #004643 50%, #00897b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* --- Paragraph --- */
+    .newsletter-section .newsletter-paragraph {
+      color: #4b5563 !important;
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* --- Primary button --- */
+    .newsletter-section .common-button {
+      background-color: #0f5132 !important;
+      border-color: #0f5132 !important;
+      color: #fff !important;
+      border-radius: 100px !important;
+      padding: 14px 32px !important;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(15,81,50,0.25);
+      transition: all 0.3s ease !important;
+    }
+    .newsletter-section .common-button:hover {
+      background-color: #00897b !important;
+      border-color: #00897b !important;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(15,81,50,0.3);
+    }
+
+    /* --- Secondary / outline button --- */
+    .newsletter-section .common-button.outline-button {
+      background-color: transparent !important;
+      border: 2px solid #0f5132 !important;
+      color: #0f5132 !important;
+      box-shadow: none;
+    }
+    .newsletter-section .common-button.outline-button:hover {
+      background-color: #0f5132 !important;
+      border-color: #0f5132 !important;
+      color: #fff !important;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(15,81,50,0.25);
+    }
+
+    /* --- Newsletter label text --- */
+    .newsletter-section .contact-label .paragraph.contact-label-text {
+      color: #4b5563;
+    }
+    .newsletter-section .contact-label-icon {
+      filter: brightness(0) saturate(100%) invert(22%) sepia(40%) saturate(900%) hue-rotate(120deg);
+    }
+
+    /* ===== BRAND LOGO SECTION → SOFT SVG CURVE DIVIDER ===== */
+    .brand-logo-section {
+      background: transparent !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 0;
+      overflow: hidden;
+    }
+    .brand-logo-section .shape-div {
+      display: none !important;
+    }
+    .brand-logo-section .brand-logo-image {
+      display: none !important;
+    }
+    .brand-logo-section .w-container {
+      display: none !important;
+    }
+    .brand-logo-section .cta-curve-divider {
+      display: block;
+      width: 100%;
+    }
+
+    /* ===== RESPONSIVE — CTA SECTION ===== */
+    @media (max-width: 991px) {
+      .section.newsletter-section {
+        padding-top: 100px !important;
+        padding-bottom: 100px !important;
+      }
+      .cta-bg-text {
+        font-size: clamp(80px, 14vw, 200px);
+      }
+      .cta-floating-shape.shape-1 { width: 200px; height: 200px; }
+      .cta-floating-shape.shape-2 { width: 140px; height: 140px; }
+      .cta-floating-shape.shape-3 { width: 100px; height: 100px; }
+    }
+
+    @media (max-width: 767px) {
+      .section.newsletter-section {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+      }
+      .cta-bg-text {
+        font-size: clamp(60px, 16vw, 140px);
+        letter-spacing: 0.08em;
+      }
+      .newsletter-section .h1-heading {
+        font-size: clamp(28px, 7vw, 42px) !important;
+      }
+      .newsletter-section .newsletter-paragraph {
+        font-size: 16px;
+      }
+      .newsletter-section .newsletter-button-div {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .newsletter-section .common-button {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 479px) {
+      .section.newsletter-section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+      }
+      .cta-bg-text {
+        font-size: 70px;
+      }
+      .newsletter-section .h1-heading {
+        font-size: 28px !important;
+      }
+      .cta-floating-shape.shape-1,
+      .cta-floating-shape.shape-3 { display: none; }
+    }
+
+    /* Footer — subtle green tint */
+    .footer {
+      position: relative;
+      overflow: hidden;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(135deg, #004643, #00665f);
+      border-radius: 50%;
+      filter: blur(140px);
+      opacity: 0.1;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .footer::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(135deg, #00665f, #004643);
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===== PREMIUM FOOTER ===== */
+    @keyframes pcgFooterReveal {
+      from { opacity: 0; transform: translate(-30px, -30px); }
+      to   { opacity: 1; transform: translate(0, 0); }
+    }
+
+    .pcg-footer {
+      background: linear-gradient(135deg, #f8f9fb 0%, #f1f3f6 50%, #f8f9fb 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0 0;
+      font-family: 'Inter', sans-serif;
+      animation: pcgFooterReveal 1.3s ease-out both;
+    }
+    .pcg-footer::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -150px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(15,81,50,0.04), transparent 70%);
+      pointer-events: none;
+    }
+    .pcg-footer::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(15,81,50,0.03), transparent 70%);
+      pointer-events: none;
+    }
+
+    .pcg-footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pcg-footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr 0.8fr;
+      gap: 48px;
+      padding-bottom: 60px;
+    }
+
+    .pcg-footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .pcg-footer-brand .footer-logo-img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+    .pcg-footer-brand .footer-tagline {
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f5132;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .pcg-footer-brand .footer-desc {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.65;
+      margin: 0;
+      max-width: 260px;
+    }
+    .pcg-footer-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0f5132;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(15,81,50,0.2);
+      margin-top: 4px;
+      width: fit-content;
+    }
+    .pcg-footer-cta:hover {
+      background: #00897b;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(15,81,50,0.25);
+    }
+    .pcg-footer-cta svg {
+      width: 14px; height: 14px;
+      transition: transform 0.3s ease;
+    }
+    .pcg-footer-cta:hover svg {
+      transform: translateX(3px);
+    }
+
+    .pcg-footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .pcg-footer-col-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin: 0 0 4px;
+    }
+    .pcg-footer-col a {
+      font-size: 14px;
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
+      display: inline-block;
+      position: relative;
+    }
+    .pcg-footer-col a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1.5px;
+      background: #0f5132;
+      transition: width 0.3s ease;
+    }
+    .pcg-footer-col a:hover {
+      color: #0f5132;
+      transform: translateY(-3px);
+    }
+    .pcg-footer-col a:hover::after {
+      width: 100%;
+    }
+
+    .pcg-footer-bottom {
+      border-top: 1px solid rgba(0,0,0,0.06);
+      padding: 28px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .pcg-footer-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .pcg-footer-copy span {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    .pcg-footer-copy .copy-tagline {
+      font-size: 11px;
+      color: #c0c5cc;
+      letter-spacing: 0.3px;
+    }
+    .pcg-footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .pcg-footer-socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(15,81,50,0.05);
+      color: #6b7280;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .pcg-footer-socials a:hover {
+      background: #0f5132;
+      color: #fff;
+      transform: scale(1.1);
+      box-shadow: 0 4px 16px rgba(15,81,50,0.25);
+    }
+    .pcg-footer-socials a svg {
+      width: 16px; height: 16px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 991px) {
+      .pcg-footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+      }
+      .pcg-footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+    @media (max-width: 767px) {
+      .pcg-footer {
+        padding: 60px 0 0;
+      }
+      .pcg-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .pcg-footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+    @media (max-width: 479px) {
+      .pcg-footer {
+        padding: 48px 0 0;
+      }
+      .pcg-footer-inner {
+        padding: 0 20px;
+      }
+      .pcg-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .pcg-footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body class="body">
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-text">PCG</span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#">Piazza</a></li>
+        <li><a href="work.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="about-us copy.html">The About Us</a></li>
+      </ul>
+      <button class="cta-btn nav-cta" onclick="window.location.href='contact-us.html'">Get Started</button>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  </div>
+
+  <!-- Products Hero -->
+  <section class="products-hero">
+    <div class="products-hero-inner">
+      <div class="products-hero-badge"><i class="fas fa-rocket"></i> Our Products</div>
+      <h1 class="products-hero-heading">AI-Native Products Built for <span>Enterprise Scale</span></h1>
+      <p class="products-hero-sub">From intelligent document processing to predictive CRMs, every product in our suite is purpose-built to eliminate friction, automate workflows, and deliver measurable ROI from day one.</p>
+    </div>
+  </section>
+
+  <!-- Products Section  Service-Grid Style -->
+  <section class="section">
+    <div class="w-layout-blockcontainer container w-container">
+      <div class="common-heading-div service-sticky-div">
+        <h2 class="h2-heading products-section-heading">Products and platforms we build.</h2>
+        <p class="large-paragraph service-text">AI-native platforms engineered for enterprise scale  from intelligent document processing to predictive CRMs, every product eliminates friction and delivers measurable ROI.</p>
+      </div>
+      <div class="service-wrapper products-service-wrapper">
+        <div class="w-layout-grid service-grid _01">
+          <div class="service-div">
+            <div class="service-page-detail-div">
+              <div class="service-heading-div">
+                <h3 class="h3-heading">D360 AI</h3>
+                <p class="large-paragraph service-card-paragraph">Transform unstructured documents into organized, searchable, and integrable data streams. Our zero-shot document extraction engine processes invoices, contracts, and forms with near-human accuracy  no templates required.</p>
+              </div>
+              <div class="service-label-div">
+                <div class="service-label"><div class="small-paragraph">Zero-Shot Extraction</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Document AI</div></div>
+                <div class="service-label"><div class="small-paragraph">Intelligent OCR</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Data Pipelines</div></div>
+                <div class="service-label"><div class="small-paragraph">Enterprise Scale</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="service-div">
+            <div class="service-image-div"><img src="images/service1_1service1.webp" loading="lazy" alt="D360 AI Product" class="service-image">
+              <div class="service-left-blur-div"></div>
+              <div class="service-info-div">
+                <div class="service-icon-div">
+                  <div class="service-icon-box"><img src="images/brand-logo1.svg" loading="lazy" alt="" class="service-icon"></div>
+                  <div class="service-icon-box"><img src="images/brand-logo2.svg" loading="lazy" alt="" class="service-icon"></div>
+                  <div class="service-icon-box"><img src="images/brand-logo3.svg" loading="lazy" alt="" class="service-icon"></div>
+                </div>
+                <a href="#" class="arrow-button-link w-inline-block">
+                  <div class="button-arrow-icon-div white-background"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _01 white-icon"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _02 white-icon"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-layout-grid service-grid _02">
+          <div class="service-div">
+            <div class="service-page-detail-div">
+              <div class="service-heading-div">
+                <h3 class="h3-heading">Piazza 360 AI</h3>
+                <p class="large-paragraph service-card-paragraph">An AI-powered CRM that automates sales workflows, boosts customer engagement, and accelerates business growth through predictive insights. Piazza learns from every interaction to surface the right opportunity at the right time.</p>
+              </div>
+              <div class="service-label-div">
+                <div class="service-label"><div class="small-paragraph">AI-Based CRM</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Predictive Insights</div></div>
+                <div class="service-label"><div class="small-paragraph">Sales Automation</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Customer Engagement</div></div>
+                <div class="service-label"><div class="small-paragraph">Lead Scoring</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="service-div">
+            <div class="service-image-div"><img src="images/service2_1service2.webp" loading="lazy" alt="Piazza 360 AI Product" class="service-image">
+              <div class="service-left-blur-div"></div>
+              <div class="service-info-div">
+                <div class="service-icon-div">
+                  <div class="service-icon-box"><img src="images/brand-logo5.svg" loading="lazy" alt="" class="service-icon"></div>
+                  <div class="service-icon-box"><img src="images/brand-logo6.svg" loading="lazy" alt="" class="service-icon"></div>
+                  <div class="service-icon-box"><img src="images/brand-logo7.svg" loading="lazy" alt="" class="service-icon"></div>
+                </div>
+                <a href="#" class="arrow-button-link w-inline-block">
+                  <div class="button-arrow-icon-div white-background"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _01 white-icon"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _02 white-icon"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-layout-grid service-grid _03">
+          <div class="service-div">
+            <div class="service-page-detail-div">
+              <div class="service-heading-div">
+                <h3 class="h3-heading">VIBEE</h3>
+                <p class="large-paragraph service-card-paragraph">A redesigned AI dashboard platform that expanded market presence through multilingual launch strategy. VIBEE delivers real-time analytics, intuitive data visualization, and actionable insights across global markets.</p>
+              </div>
+              <div class="service-label-div">
+                <div class="service-label"><div class="small-paragraph">AI Dashboard</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Data Visualization</div></div>
+                <div class="service-label"><div class="small-paragraph">Real-Time Analytics</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Multilingual</div></div>
+                <div class="service-label"><div class="small-paragraph">Global Scale</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="service-div">
+            <div class="service-image-div"><img src="images/service3_1service3.webp" loading="lazy" alt="VIBEE Product" class="service-image">
+              <div class="service-left-blur-div"></div>
+              <div class="service-info-div">
+                <div class="service-icon-div">
+                  <div class="service-icon-box"><img src="images/brand-logo9.svg" loading="lazy" alt="" class="service-icon"></div>
+                  <div class="service-icon-box"><img src="images/brand-logo10.svg" loading="lazy" alt="" class="service-icon"></div>
+                  <div class="service-icon-box"><img src="images/brand-logo11.svg" loading="lazy" alt="" class="service-icon"></div>
+                </div>
+                <a href="#" class="arrow-button-link w-inline-block">
+                  <div class="button-arrow-icon-div white-background"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _01 white-icon"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _02 white-icon"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-layout-grid service-grid _04">
+          <div class="service-div">
+            <div class="service-page-detail-div">
+              <div class="service-heading-div">
+                <h3 class="h3-heading">AI Dialer</h3>
+                <p class="large-paragraph service-card-paragraph">Automatically routes leads to the right team for faster responses and higher conversions. Our intelligent dialing system uses real-time scoring to prioritize high-value calls and maximize agent productivity.</p>
+              </div>
+              <div class="service-label-div">
+                <div class="service-label"><div class="small-paragraph">Smart Routing</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Lead Scoring</div></div>
+                <div class="service-label"><div class="small-paragraph">Auto Dialing</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Call Analytics</div></div>
+                <div class="service-label"><div class="small-paragraph">Agent Productivity</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="service-div">
+            <div class="service-image-div"><img src="images/service4_1service4.webp" loading="lazy" alt="AI Dialer Product" class="service-image">
+              <div class="service-left-blur-div"></div>
+              <div class="service-info-div">
+                <div class="service-icon-div">
+                  <div class="service-icon-box"><img src="images/brand-logo13.svg" loading="lazy" alt="" class="service-icon"></div>
+                  <div class="service-icon-box"><img src="images/brand-logo14.svg" loading="lazy" alt="" class="service-icon"></div>
+                  <div class="service-icon-box"><img src="images/brand-logo15.svg" loading="lazy" alt="" class="service-icon"></div>
+                </div>
+                <a href="#" class="arrow-button-link w-inline-block">
+                  <div class="button-arrow-icon-div white-background"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _01 white-icon"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _02 white-icon"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-layout-grid service-grid _05">
+          <div class="service-div">
+            <div class="service-page-detail-div">
+              <div class="service-heading-div">
+                <h3 class="h3-heading">LOS</h3>
+                <p class="large-paragraph service-card-paragraph">A next-generation Loan Origination System transforming digital loan processing and borrower experience. Built for speed, compliance, and scale  LOS automates underwriting, document verification, and closing workflows.</p>
+              </div>
+              <div class="service-label-div">
+                <div class="service-label"><div class="small-paragraph">Loan Automation</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Digital Processing</div></div>
+                <div class="service-label"><div class="small-paragraph">Underwriting AI</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Compliance</div></div>
+                <div class="service-label"><div class="small-paragraph">Borrower Experience</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="service-div">
+            <div class="service-image-div"><img src="images/service5_1service5.webp" loading="lazy" alt="LOS Product" class="service-image">
+              <div class="service-left-blur-div"></div>
+              <div class="service-info-div">
+                <div class="service-icon-div">
+                  <div class="service-icon-box"><img src="images/brand-logo17.svg" loading="lazy" alt="" class="service-icon"></div>
+                  <div class="service-icon-box"><img src="images/brand-logo18.svg" loading="lazy" alt="" class="service-icon"></div>
+                </div>
+                <a href="#" class="arrow-button-link w-inline-block">
+                  <div class="button-arrow-icon-div white-background"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _01 white-icon"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _02 white-icon"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-layout-grid service-grid _06">
+          <div class="service-div">
+            <div class="service-page-detail-div">
+              <div class="service-heading-div">
+                <h3 class="h3-heading">Mallory</h3>
+                <p class="large-paragraph service-card-paragraph">Matches user data with complex rules to ensure accurate validation and compliance. Mallory's intelligent rule engine adapts to evolving regulations and flags anomalies before they become costly errors.</p>
+              </div>
+              <div class="service-label-div">
+                <div class="service-label"><div class="small-paragraph">Smart Validation</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Rule Engine</div></div>
+                <div class="service-label"><div class="small-paragraph">Compliance</div></div>
+                <div class="service-label round-border-radius"><div class="small-paragraph">Anomaly Detection</div></div>
+                <div class="service-label"><div class="small-paragraph">Data Matching</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="service-div">
+            <div class="service-image-div"><img src="images/service6_1service6.webp" loading="lazy" alt="Mallory Product" class="service-image">
+              <div class="service-left-blur-div"></div>
+              <div class="service-info-div">
+                <div class="service-icon-div">
+                  <div class="service-icon-box"><img src="images/brand-logo19.svg" loading="lazy" alt="" class="service-icon"></div>
+                  <div class="service-icon-box"><img src="images/brand-logo20.svg" loading="lazy" alt="" class="service-icon"></div>
+                  <div class="service-icon-box"><img src="images/brand-logo21.svg" loading="lazy" alt="" class="service-icon"></div>
+                </div>
+                <a href="#" class="arrow-button-link w-inline-block">
+                  <div class="button-arrow-icon-div white-background"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _01 white-icon"><img loading="lazy" src="images/button-arrow.svg" alt="" class="button-arrow-icon _02 white-icon"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section newsletter-section">
+    <!-- Floating abstract shapes -->
+    <div class="cta-floating-shape shape-1"></div>
+    <div class="cta-floating-shape shape-2"></div>
+    <div class="cta-floating-shape shape-3"></div>
+    <!-- Huge background text -->
+    <div class="cta-bg-text" aria-hidden="true">PIAZZA</div>
+    <div class="w-layout-blockcontainer container w-container">
+      <div class="newsletter-heading-div">
+        <div data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ecdd" class="hero-sub-heading-div"><img src="images/star.svg" loading="lazy" alt="" class="sub-heading-icon">
+          <div class="small-paragraph white-text hero-sub-heading-text">AI + Product Agency</div>
+        </div>
+        <h2 data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ece1" class="h1-heading">Get started for free</h2>
+        <p data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ece3" class="large-paragraph newsletter-paragraph">From idea to investment, MVP to market &mdash; we adapt to your goals and build around what your product truly needs.</p>
+        <div data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ece5" class="newsletter-button-div">
+          <a href="contact-us.html" class="common-button w-button">Get Started</a>
+          <a href="pricing.html" class="common-button outline-button w-button">Explore Pricing Plan</a>
+          <div data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ecea" class="contact-label newsletter-label"><img src="images/newsletter-arrow.svg" loading="lazy" alt="" class="contact-label-icon">
+            <div class="paragraph contact-label-text">Got a concept? Let's design it right.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section data-w-id="debf71a0-3137-3bfc-8542-948a6dddace4" class="brand-logo-section">
+    <svg class="cta-curve-divider" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,60 C360,0 1080,0 1440,60 L1440,80 L0,80 Z" fill="#f8f8f8"/></svg>
+    <div class="shape-div"></div>
+    <div class="w-layout-blockcontainer container w-container"><img src="images/logo-large.svg" loading="lazy" alt="Logo" class="brand-logo-image"></div>
+  </section>
+  <footer class="pcg-footer">
+    <div class="pcg-footer-inner">
+      <div class="pcg-footer-grid">
+        <!-- Brand -->
+        <div class="pcg-footer-brand">
+          <a href="index.html"><img src="images/pcg-logo1.avif" loading="lazy" width="90" height="50" alt="PCG Logo" class="footer-logo-img"></a>
+          <p class="footer-tagline">Design-Driven AI &amp; Product Partner</p>
+          <p class="footer-desc">Building AI-native enterprise products and scalable software solutions for the modern era.</p>
+          <a href="contact-us.html" class="pcg-footer-cta">Get Started <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg></a>
+        </div>
+        <!-- Company -->
+        <div class="pcg-footer-col">
+          <h4 class="pcg-footer-col-title">Company</h4>
+          <a href="work.html">Products</a>
+          <a href="services.html">Services</a>
+          <a href="about-us.html">About Us</a>
+          <!-- <a href="pricing.html">Industries</a> -->
+          <!-- <a href="blog.html">Blog</a> -->
+          <!-- <a href="contact-us.html">Contact</a> -->
+        </div>
+        <!-- Services -->
+        <div class="pcg-footer-col">
+          <h4 class="pcg-footer-col-title">Services</h4>
+          <a href="services.html">Artificial Intelligence</a>
+          <a href="services.html">Software Engineering</a>
+          <a href="services.html">Product Design &amp; Management</a>
+          <a href="services.html">Mortgage Services</a>
+          <a href="services.html">Cyber Security</a>
+          <a href="services.html">Engineering &amp; Consulting</a>
+          <a href="services.html">No-Code Development</a>
+        </div>
+        <!-- Products -->
+        <div class="pcg-footer-col">
+          <h4 class="pcg-footer-col-title">Products</h4>
+          <a href="work.html">D360 AI</a>
+          <a href="work.html">Piazza 360 AI</a>
+          <a href="work.html">VIBEE</a>
+          <a href="work.html">AI Dialer</a>
+          <a href="work.html">LOS</a>
+          <a href="work.html">Mallory</a>
+        </div>
+        <!-- Legal -->
+        <div class="pcg-footer-col">
+          <h4 class="pcg-footer-col-title">Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="templates/license.html">License</a>
+          <a href="templates/changelog.html">Changelog</a>
+          <a href="templates/styleguide.html">Style Guide</a>
+        </div>
+      </div>
+      <!-- Bottom bar -->
+      <div class="pcg-footer-bottom">
+        <div class="pcg-footer-copy">
+          <span>&copy; 2026 PCG. All rights reserved.</span>
+          <span class="copy-tagline">Designed for the AI Era.</span>
+        </div>
+        <div class="pcg-footer-socials">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=69a717cdab0ca944ab3415a3" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <script>
+    // Register GSAP ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ============================================================
+    // NAVBAR â€” Drop from top + scroll effect
+    // ============================================================
+    (function() {
+      var navbar = document.getElementById('navbar');
+      var hamburger = document.getElementById('hamburger');
+      var navMenu = document.getElementById('nav-menu');
+      if (!navbar || !hamburger || !navMenu) return;
+
+      gsap.fromTo(navbar,
+        { y: -80, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out' }
+      );
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      var navLinks = document.querySelectorAll('.nav-menu a');
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    })();
+
+    // ============================================================
+    // HERO â€” Page load timeline (badge, heading, subtitle)
+    // ============================================================
+    (function() {
+      var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      tl.fromTo('.products-hero-badge',
+        { y: 50, opacity: 0, visibility: 'hidden' },
+        { y: 0, opacity: 1, visibility: 'visible', duration: 1.1 },
+        0.4
+      );
+
+      tl.fromTo('.products-hero-heading',
+        { y: 60, opacity: 0, visibility: 'hidden' },
+        { y: 0, opacity: 1, visibility: 'visible', duration: 1.2 },
+        0.7
+      );
+
+      tl.fromTo('.products-hero-sub',
+        { y: 60, opacity: 0, visibility: 'hidden' },
+        { y: 0, opacity: 1, visibility: 'visible', duration: 1.2 },
+        1.0
+      );
+    })();
+
+    // ============================================================
+    // PRODUCTS SECTION — Scroll-triggered reveal
+    // (heading slides up; wrapper fades in without transform)
+    // ============================================================
+    (function() {
+      var section = document.querySelector('.products-service-wrapper');
+      if (!section) return;
+      var container = section.closest('.container');
+      var heading = container ? container.querySelector('.service-sticky-div .h2-heading') : null;
+      var paragraph = container ? container.querySelector('.service-sticky-div .large-paragraph') : null;
+
+      // Heading + paragraph: slide up + fade (no sticky children, transform is safe)
+      [heading, paragraph].forEach(function(el, i) {
+        if (!el) return;
+        gsap.set(el, { opacity: 0, y: 48, filter: 'blur(3px)' });
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top 85%',
+          once: true,
+          onEnter: function() {
+            gsap.to(el, {
+              opacity: 1, y: 0, filter: 'blur(0px)',
+              duration: 1.4, ease: 'power2.out', delay: i * 0.12
+            });
+          }
+        });
+      });
+
+      // Wrapper: fade + blur only — NO transform (preserves sticky)
+      gsap.set(section, { opacity: 0, filter: 'blur(3px)' });
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top 85%',
+        once: true,
+        onEnter: function() {
+          gsap.to(section, {
+            opacity: 1, filter: 'blur(0px)',
+            duration: 1.4, ease: 'power2.out'
+          });
+        }
+      });
+    })();
+
+
+    // ============================================================
+    // FOOTER â€” Subtle entrance
+    // ============================================================
+    (function() {
+      var footer = document.querySelector('.footer-section');
+      if (!footer) return;
+
+      gsap.fromTo(footer,
+        { y: 50, opacity: 0 },
+        {
+          y: 0, opacity: 1,
+          duration: 1.1, ease: 'power2.out',
+          scrollTrigger: {
+            trigger: footer,
+            start: 'top 92%',
+            once: true
+          }
+        }
+      );
+    })();
+
+    // ============================================================
+    // PARALLAX â€” Subtle hero background glow shift
+    // ============================================================
+    (function() {
+      var hero = document.querySelector('.products-hero');
+      if (!hero) return;
+
+      window.addEventListener('scroll', function() {
+        var scrolled = window.scrollY;
+        if (scrolled < hero.offsetHeight * 1.5) {
+          hero.style.setProperty('--parallax-y', (scrolled * 0.15) + 'px');
+        }
+      });
+
+      var s = document.createElement('style');
+      s.textContent = '.products-hero::before { transform: translateX(-50%) translateY(var(--parallax-y, 0px)); }';
+      document.head.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
