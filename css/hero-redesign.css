@@ -229,6 +229,26 @@
   border-radius: 20px;
   overflow: hidden;
 }
+.hackathon-section .blog-slider-wrapper {
+  margin-top: 60px;
+}
+.hackathon-section .blog-slider-mask {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+.hackathon-section .blog-slider.w-slide {
+  flex: 1 1 0%;
+  margin-right: 24px;
+}
+.hackathon-section .blog-slider.w-slide:last-child {
+  margin-right: 0;
+}
+.hackathon-section .blog-thumb-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
 
 /* Hero Section */
 .hero {
