@@ -56,6 +56,11 @@
   font-size: 28px;
   font-weight: 700;
   color: #004643;
+}kw
+.navbar .logo-img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navbar .nav-menu {
