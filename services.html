@@ -80,7 +80,7 @@
     /* --- Stack Section --- */
     .stack-section {
       position: relative;
-      overflow: clip;
+      overflow: visible;
     }
 
     /* Override ptcg.webflow.css overflow-x:hidden which breaks sticky.
@@ -98,7 +98,7 @@
       margin-left: auto;
       margin-right: auto;
       transition: box-shadow 0.4s ease;
-      min-height: 420px;
+      height: 420px;
       align-items: stretch;
     }
     .service-grid.stack-card {
@@ -116,9 +116,15 @@
     .service-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 24px;
       background-color: transparent !important;
       margin-top: 80px;
+    }
+    /* Spacer after last card — keeps sticky cards stuck while user views the final card */
+    .sticky-scroll-spacer {
+      height: 40vh;
+      pointer-events: none;
+      flex-shrink: 0;
     }
 
     /* Responsive */
@@ -134,6 +140,16 @@
       .service-grid {
         max-width: 100%;
       }
+      .sticky-scroll-spacer {
+        display: none;
+      }
+    }
+
+    /* --- Service Label Container --- */
+    .service-label-div {
+      flex-flow: row nowrap !important;
+      align-items: center;
+      gap: 10px;
     }
 
     /* --- Service Labels (pill style, green tint) --- */
@@ -141,7 +157,9 @@
       background-color: rgba(0,70,67,0.05) !important;
       border: 1px solid rgba(0,70,67,0.12) !important;
       border-radius: 100px !important;
+      padding: 8px 14px !important;
       transition: all 0.25s ease;
+      white-space: nowrap;
     }
     .service-label:hover {
       background-color: rgba(0,70,67,0.10) !important;
@@ -149,6 +167,7 @@
     }
     .service-label .small-paragraph {
       color: #004643;
+      font-size: 13px;
     }
 
     /* --- Service Section Heading --- */
@@ -973,19 +992,7 @@
                   <div class="small-paragraph">Conversational AI</div>
                 </div>
                 <div class="service-label round-border-radius">
-                  <div class="small-paragraph">Intelligent OCR</div>
-                </div>
-                <div class="service-label">
                   <div class="small-paragraph">Document AI</div>
-                </div>
-                <div class="service-label">
-                  <div class="small-paragraph">Workflow Automation</div>
-                </div>
-                <div class="service-label">
-                  <div class="small-paragraph">Decision Intelligence</div>
-                </div>
-                <div class="service-label round-border-radius">
-                  <div class="small-paragraph">AI Chatbots</div>
                 </div>
               </div>
             </div>
@@ -1019,19 +1026,7 @@
                   <div class="small-paragraph">Application Development</div>
                 </div>
                 <div class="service-label round-border-radius">
-                  <div class="small-paragraph">Digital Transformation</div>
-                </div>
-                <div class="service-label">
                   <div class="small-paragraph">Cloud Solutions</div>
-                </div>
-                <div class="service-label">
-                  <div class="small-paragraph">API Architecture</div>
-                </div>
-                <div class="service-label">
-                  <div class="small-paragraph">Secure Systems</div>
-                </div>
-                <div class="service-label round-border-radius">
-                  <div class="small-paragraph">Scalable Apps</div>
                 </div>
               </div>
             </div>
@@ -1053,7 +1048,7 @@
             </div>
           </div>
         </div>
-        <div class="w-layout-grid service-grid stack-card _03" data-href="service-product-design.html">
+        <!-- <div class="w-layout-grid service-grid stack-card _03" data-href="service-product-design.html">
           <div class="service-div">
             <div class="service-page-detail-div">
               <div class="service-heading-div">
@@ -1101,7 +1096,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="w-layout-grid service-grid stack-card _04" data-href="service-mortgage.html">
           <div class="service-div">
             <div class="service-page-detail-div">
@@ -1115,18 +1110,6 @@
                 </div>
                 <div class="service-label round-border-radius">
                   <div class="small-paragraph">Underwriting</div>
-                </div>
-                <div class="service-label">
-                  <div class="small-paragraph">Quality Control</div>
-                </div>
-                <div class="service-label">
-                  <div class="small-paragraph">Post-Closing</div>
-                </div>
-                <div class="service-label round-border-radius">
-                  <div class="small-paragraph">Encompass Admin</div>
-                </div>
-                <div class="service-label">
-                  <div class="small-paragraph">Automation</div>
                 </div>
               </div>
             </div>
@@ -1160,19 +1143,7 @@
                   <div class="small-paragraph">vCISO Services</div>
                 </div>
                 <div class="service-label round-border-radius">
-                  <div class="small-paragraph">Security Consulting</div>
-                </div>
-                <div class="service-label">
                   <div class="small-paragraph">PCI Compliance</div>
-                </div>
-                <div class="service-label round-border-radius">
-                  <div class="small-paragraph">Cloud Security</div>
-                </div>
-                <div class="service-label">
-                  <div class="small-paragraph">Vulnerability Mgmt</div>
-                </div>
-                <div class="service-label round-border-radius">
-                  <div class="small-paragraph">Pen Testing</div>
                 </div>
               </div>
             </div>
@@ -1201,22 +1172,10 @@
               </div>
               <div class="service-label-div">
                 <div class="service-label">
-                  <div class="small-paragraph">Research</div>
-                </div>
-                <div class="service-label round-border-radius">
                   <div class="small-paragraph">Industrial Design</div>
-                </div>
-                <div class="service-label">
-                  <div class="small-paragraph">Mechanical Engineering</div>
                 </div>
                 <div class="service-label round-border-radius">
                   <div class="small-paragraph">Prototyping</div>
-                </div>
-                <div class="service-label">
-                  <div class="small-paragraph">Design Automation</div>
-                </div>
-                <div class="service-label round-border-radius">
-                  <div class="small-paragraph">Consulting</div>
                 </div>
               </div>
             </div>
@@ -1238,7 +1197,7 @@
             </div>
           </div>
         </div>
-        <div class="w-layout-grid service-grid stack-card _07" data-href="service-no-code-development.html">
+        <!-- <div class="w-layout-grid service-grid stack-card _07" data-href="service-no-code-development.html">
           <div class="service-div">
             <div class="service-page-detail-div">
               <div class="service-heading-div">
@@ -1283,11 +1242,11 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
-  <section class="section overflow-hidden slider-section">
+  <!-- <section class="section overflow-hidden slider-section">
     <div class="w-layout-blockcontainer container w-container">
       <div class="common-heading-div">
         <h2 data-w-id="e44ba0e9-8683-bfd8-2dd0-4f2f68e8e825" style="-webkit-transform:translate3d(null, 48px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 48px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 48px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 48px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0;filter:blur(3px)" class="h2-heading">Industries</h2>
@@ -1364,8 +1323,8 @@
         <div class="none w-slider-nav w-round w-num"></div>
       </div>
     </div>
-  </section>
-  <section class="section gray-background">
+  </section> -->
+  <!-- <section class="section gray-background">
     <div class="w-layout-blockcontainer container w-container">
       <div class="common-flex-div">
         <h2 data-w-id="54c330b7-99c2-1ee5-c15d-d76cad36bef4" class="h2-heading process-heading">We Don’t Just Transform Businesses<br>We Re-Engineer Them for the AI Era.</h2>
@@ -1507,7 +1466,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <section class="section overflow-hidden">
     <div class="w-layout-blockcontainer container w-container">
       <div class="common-heading-div text-center">
@@ -2134,11 +2093,11 @@ border-radius: 100px !important;
         <div data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ecdd" class="hero-sub-heading-div"><img src="images/star.svg" loading="lazy" alt="" class="sub-heading-icon">
           <div class="small-paragraph white-text hero-sub-heading-text">AI + Product Agency</div>
         </div>
-        <h2 data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ece1" class="h1-heading">Get started for free</h2>
-        <p data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ece3" class="large-paragraph newsletter-paragraph">From idea to investment, MVP to market &mdash; we adapt to your goals and build around what your product truly needs.</p>
+        <h2 data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ece1" class="h1-heading">Build AI That Delivers Measurable Impact</h2>
+        <p data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ece3" class="large-paragraph newsletter-paragraph">From intelligent automation to enterprise-grade platforms, PCG engineers systems that reduce complexity, increase speed, and unlock growth</p>
         <div data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ece5" class="newsletter-button-div">
           <a href="contact-us.html" class="common-button w-button">Get Started</a>
-          <a href="pricing.html" class="common-button outline-button w-button">Explore Pricing Plan</a>
+          <a href="work.html" class="common-button outline-button w-button">Explore Our Products</a>
           <div data-w-id="0fe65c2f-7dab-adac-a8a3-2c197ee9ecea" class="contact-label newsletter-label"><img src="images/newsletter-arrow.svg" loading="lazy" alt="" class="contact-label-icon">
             <div class="paragraph contact-label-text">Got a concept? Let's design it right.</div>
           </div>
@@ -2270,43 +2229,64 @@ border-radius: 100px !important;
       var wrapper = document.querySelector('.service-wrapper');
       if (!cards.length || !wrapper) return;
 
-      // Check if mobile — skip horizontal animation
       var isMobile = window.matchMedia('(max-width: 480px)').matches;
 
-      // Assign z-index so later cards stack above earlier ones
+      // Stagger sticky top so each card layers slightly below previous
       cards.forEach(function(card, i) {
         card.style.zIndex = i + 1;
+        card.style.top = (120 + i * 4) + 'px';
       });
 
-      if (isMobile) return; // No horizontal slide on mobile
+      // Inject a spacer div inside the wrapper so sticky cards stay stuck
+      // long enough for the last card to be fully viewed
+      if (!isMobile) {
+        var spacer = document.createElement('div');
+        spacer.className = 'sticky-scroll-spacer';
+        wrapper.appendChild(spacer);
+      }
 
-      // Each card (except first): slide in from alternating sides
-      // Card 1 (index 0) just stacks naturally — no horizontal animation
+      if (isMobile) return;
+
       for (var i = 1; i < cards.length; i++) {
         (function(index) {
-          // odd index → from LEFT (-100%), even index → from RIGHT (100%)
           var fromLeft = (index % 2 === 1);
-          var xVal = fromLeft ? -100 : 100;
+          var xVal = fromLeft ? -110 : 110;
+          var stickyPos = 120 + index * 4;
 
-          // Set initial off-screen position
-          gsap.set(cards[index], { xPercent: xVal, scale: 0.95 });
+          // Start off-screen and invisible
+          gsap.set(cards[index], { xPercent: xVal, opacity: 0, visibility: 'hidden' });
 
-          // Scrub animation: slide + scale to normal as card scrolls into view
-          gsap.to(cards[index], {
-            xPercent: 0,
-            scale: 1,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: cards[index],
-              start: 'top bottom',
-              end: 'top 30%',
-              scrub: 0.6,
-              markers: false,
-              onEnter: function() { cards[index].classList.add('is-active'); },
-              onLeaveBack: function() {
-                cards[index].classList.remove('is-active');
-                gsap.set(cards[index], { xPercent: xVal, scale: 0.95 });
-              }
+          // Use an IntersectionObserver approach via ScrollTrigger:
+          // Pin-like trick — we create TWO triggers:
+          // 1. A "ready" trigger that fires slightly before sticky to prep the card
+          // 2. The main trigger at exact sticky position for pure horizontal animation
+
+          // Main trigger: fires when card top reaches its sticky position
+          // At this point the card is vertically LOCKED — animation is pure horizontal
+          ScrollTrigger.create({
+            trigger: cards[index],
+            start: 'top ' + (stickyPos + 5) + 'px',
+            onEnter: function() {
+              gsap.set(cards[index], { visibility: 'visible' });
+              gsap.to(cards[index], {
+                xPercent: 0,
+                opacity: 1,
+                duration: 0.65,
+                ease: 'power2.out',
+                onComplete: function() { cards[index].classList.add('is-active'); }
+              });
+            },
+            onLeaveBack: function() {
+              cards[index].classList.remove('is-active');
+              gsap.to(cards[index], {
+                xPercent: xVal,
+                opacity: 0,
+                duration: 0.45,
+                ease: 'power2.in',
+                onComplete: function() {
+                  gsap.set(cards[index], { visibility: 'hidden' });
+                }
+              });
             }
           });
         })(i);
