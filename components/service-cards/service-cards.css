@@ -85,36 +85,1405 @@
   border-color: #00897b;
 }
 
-/* --- Card Image --- */
-.svc-card-image-wrapper {
+/* --- Card Mockup Visual --- */
+.svc-card-visual {
   width: 100%;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(135deg, #e8f5f3, #d4edea);
-}
-
-.svc-card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.svc-card:hover .svc-card-image {
-  transform: scale(1.06);
-}
-
-/* Fallback icon when no image is available */
-.svc-card-image-fallback {
-  width: 100%;
-  height: 100%;
+  padding: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
-  color: rgba(0, 70, 67, 0.2);
+}
+
+/* ---- Gradient backgrounds per card type ---- */
+.svc-card-visual--app {
+  background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+}
+.svc-card-visual--transform {
+  background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+}
+.svc-card-visual--cloud {
+  background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+}
+.svc-card-visual--api {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+.svc-card-visual--design {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+}
+.svc-card-visual--mgmt {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+}
+.svc-card-visual--strategy {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+}
+
+/* Cyber Security gradients */
+.svc-card-visual--vciso {
+  background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+}
+.svc-card-visual--seccon {
+  background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+}
+.svc-card-visual--pci {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+.svc-card-visual--cloudsec {
+  background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+}
+.svc-card-visual--pentest {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+}
+
+/* Engineering gradients */
+.svc-card-visual--stratplan {
+  background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+}
+.svc-card-visual--research {
+  background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+}
+.svc-card-visual--inddesign {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+}
+.svc-card-visual--mecheng {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+.svc-card-visual--proto {
+  background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+}
+.svc-card-visual--consult {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+}
+.svc-card-visual--graphic {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+}
+.svc-card-visual--mechaut {
+  background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);
+}
+
+/* ---- Hover glow on visuals ---- */
+.svc-card:hover .svc-card-visual {
+  box-shadow: inset 0 0 30px rgba(0, 137, 123, 0.06);
+}
+
+/* ================================================
+   SVC MOCKUP: App Dev — Code Editor
+   ================================================ */
+.svc-mock-editor {
+  width: 100%;
+  max-width: 230px;
+  background: #1e1e2e;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.svc-mock-editor-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #16161e;
+}
+
+.svc-mock-editor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.svc-mock-editor-dot:nth-child(1) {
+  background: #ff5f56;
+}
+.svc-mock-editor-dot:nth-child(2) {
+  background: #ffbd2e;
+}
+.svc-mock-editor-dot:nth-child(3) {
+  background: #27c93f;
+}
+
+.svc-mock-editor-body {
+  padding: 12px 14px;
+  font-size: 10px;
+  line-height: 1.8;
+  color: #a9b1d6;
+}
+
+.svc-mock-editor-body .kw {
+  color: #bb9af7;
+}
+.svc-mock-editor-body .fn {
+  color: #7aa2f7;
+}
+.svc-mock-editor-body .str {
+  color: #9ece6a;
+}
+.svc-mock-editor-body .cm {
+  color: #565f89;
+}
+.svc-mock-editor-body .op {
+  color: #c0caf5;
+}
+
+/* ================================================
+   SVC MOCKUP: Digital Transform — Before/After
+   ================================================ */
+.svc-mock-transform {
+  width: 100%;
+  max-width: 240px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Inter", sans-serif;
+}
+
+.svc-mock-transform-box {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.svc-mock-transform-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  color: #999;
+}
+
+.svc-mock-transform-icon {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.svc-mock-transform-box--old .svc-mock-transform-icon {
+  color: #ccc;
+}
+.svc-mock-transform-box--new .svc-mock-transform-icon {
+  color: #00897b;
+}
+
+.svc-mock-transform-text {
+  font-size: 10px;
+  color: #666;
+  font-weight: 500;
+}
+
+.svc-mock-transform-arrow {
+  font-size: 18px;
+  color: #00897b;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ================================================
+   SVC MOCKUP: Cloud — Server Diagram
+   ================================================ */
+.svc-mock-cloud {
+  width: 100%;
+  max-width: 220px;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+.svc-mock-cloud-icon {
+  font-size: 32px;
+  color: #004643;
+  margin-bottom: 10px;
+}
+
+.svc-mock-cloud-providers {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.svc-mock-cloud-chip {
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-size: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.svc-mock-cloud-bars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.svc-mock-cloud-bar {
+  width: 32px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(0, 70, 67, 0.15);
+}
+
+.svc-mock-cloud-bar--fill {
+  background: linear-gradient(90deg, #00897b, #004643);
+}
+
+.svc-mock-cloud-status {
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #00897b;
+}
+
+/* ================================================
+   SVC MOCKUP: API — Request/Response
+   ================================================ */
+.svc-mock-api {
+  width: 100%;
+  max-width: 230px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.svc-mock-api-method {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.svc-mock-api-badge {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #fff;
+  background: #00897b;
+}
+
+.svc-mock-api-badge--post {
+  background: #f59e0b;
+}
+
+.svc-mock-api-url {
+  font-size: 10px;
+  color: #666;
+}
+
+.svc-mock-api-body {
+  padding: 10px 14px;
+  font-size: 10px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.svc-mock-api-body .api-key {
+  color: #bb9af7;
+}
+.svc-mock-api-body .api-val {
+  color: #9ece6a;
+}
+
+.svc-mock-api-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-top: 1px solid #eee;
+  font-size: 10px;
+  font-weight: 600;
+  color: #00897b;
+}
+
+/* ================================================
+   SVC MOCKUP: Product Design — UI Wireframe
+   ================================================ */
+.svc-mock-wireframe {
+  width: 100%;
+  max-width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 14px;
+  font-family: "Inter", sans-serif;
+}
+
+.svc-mock-wireframe-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.svc-mock-wireframe-logo {
+  width: 40px;
+  height: 8px;
+  border-radius: 4px;
+  background: #004643;
+}
+
+.svc-mock-wireframe-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.svc-mock-wireframe-dots span {
+  width: 16px;
+  height: 4px;
+  border-radius: 2px;
+  background: #ddd;
+}
+
+.svc-mock-wireframe-hero {
+  height: 36px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+  margin-bottom: 10px;
+}
+
+.svc-mock-wireframe-cols {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.svc-mock-wireframe-col {
+  flex: 1;
+  height: 28px;
+  border-radius: 4px;
+  background: #f5f5f5;
+}
+
+.svc-mock-wireframe-btn {
+  width: 60px;
+  height: 18px;
+  border-radius: 9px;
+  background: #00897b;
+}
+
+/* ================================================
+   SVC MOCKUP: Project Mgmt — Kanban Board
+   ================================================ */
+.svc-mock-kanban {
+  width: 100%;
+  max-width: 240px;
+  display: flex;
+  gap: 8px;
+  font-family: "Inter", sans-serif;
+}
+
+.svc-mock-kanban-col {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.svc-mock-kanban-title {
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #999;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.svc-mock-kanban-card {
+  padding: 5px 6px;
+  border-radius: 4px;
+  background: #f8f9fa;
+  margin-bottom: 4px;
+  font-size: 8px;
+  color: #444;
+  border-left: 2px solid transparent;
+}
+
+.svc-mock-kanban-card--green {
+  border-left-color: #00897b;
+}
+.svc-mock-kanban-card--amber {
+  border-left-color: #f59e0b;
+}
+.svc-mock-kanban-card--blue {
+  border-left-color: #3b82f6;
+}
+
+/* ================================================
+   SVC MOCKUP: Strategy — Market Position Chart
+   ================================================ */
+.svc-mock-strategy {
+  width: 100%;
+  max-width: 220px;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+.svc-mock-strategy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.svc-mock-strategy-quad {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-size: 9px;
+  font-weight: 600;
+  color: #666;
+}
+
+.svc-mock-strategy-quad--active {
+  background: #004643;
+  color: #fff;
+}
+
+.svc-mock-strategy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  font-size: 11px;
+  font-weight: 700;
+  color: #004643;
+}
+
+.svc-mock-strategy-badge i {
+  color: #00897b;
+  font-size: 10px;
+}
+
+/* ================================================
+   SVC MOCKUP: vCISO — Security Dashboard
+   ================================================ */
+.svc-mock-dashboard {
+  width: 100%;
+  max-width: 230px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 14px;
+  font-family: "Inter", sans-serif;
+}
+
+.svc-mock-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.svc-mock-dashboard-title {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #999;
+}
+
+.svc-mock-dashboard-badge {
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: rgba(0, 137, 123, 0.12);
+  color: #00897b;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.svc-mock-dashboard-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.svc-mock-dashboard-ring {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 5px solid rgba(0, 70, 67, 0.1);
+  border-top-color: #00897b;
+  border-right-color: #00897b;
+  border-bottom-color: #00897b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #004643;
+}
+
+.svc-mock-dashboard-metrics {
+  display: flex;
+  gap: 6px;
+}
+
+.svc-mock-dashboard-metric {
+  flex: 1;
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 6px 8px;
+  text-align: center;
+}
+
+.svc-mock-dashboard-metric-val {
+  font-size: 12px;
+  font-weight: 700;
+  color: #004643;
+}
+
+.svc-mock-dashboard-metric-label {
+  font-size: 7px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ================================================
+   SVC MOCKUP: Security Consulting — Threat Scan
+   ================================================ */
+.svc-mock-scan {
+  width: 100%;
+  max-width: 230px;
+  background: #1e1e2e;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.svc-mock-scan-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #16161e;
+}
+
+.svc-mock-scan-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.svc-mock-scan-dot:nth-child(1) {
+  background: #ff5f56;
+}
+.svc-mock-scan-dot:nth-child(2) {
+  background: #ffbd2e;
+}
+.svc-mock-scan-dot:nth-child(3) {
+  background: #27c93f;
+}
+
+.svc-mock-scan-body {
+  padding: 12px 14px;
+  font-size: 9px;
+  line-height: 1.9;
+  color: #a9b1d6;
+}
+
+.svc-mock-scan-line--ok {
+  color: #9ece6a;
+}
+.svc-mock-scan-line--warn {
+  color: #e0af68;
+}
+.svc-mock-scan-line--crit {
+  color: #f7768e;
+}
+.svc-mock-scan-line--info {
+  color: #7aa2f7;
+}
+
+/* ================================================
+   SVC MOCKUP: PCI — Compliance Checklist
+   ================================================ */
+.svc-mock-checklist {
+  width: 100%;
+  max-width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 14px;
+  font-family: "Inter", sans-serif;
+}
+
+.svc-mock-checklist-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.svc-mock-checklist-icon {
+  color: #f59e0b;
+  font-size: 16px;
+}
+
+.svc-mock-checklist-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #333;
+}
+
+.svc-mock-checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  font-size: 10px;
+  color: #555;
+}
+
+.svc-mock-checklist-check {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  flex-shrink: 0;
+}
+
+.svc-mock-checklist-check--done {
+  background: #00897b;
+  color: #fff;
+}
+
+.svc-mock-checklist-check--pending {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  color: transparent;
+}
+
+.svc-mock-checklist-progress {
+  margin-top: 10px;
+  height: 6px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.svc-mock-checklist-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #00897b, #004643);
+}
+
+/* ================================================
+   SVC MOCKUP: Cloud Security — Lock Shield
+   ================================================ */
+.svc-mock-shield {
+  width: 100%;
+  max-width: 220px;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+.svc-mock-shield-icon {
+  font-size: 36px;
+  color: #004643;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.svc-mock-shield-icon .fa-lock {
+  position: absolute;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  color: #00897b;
+}
+
+.svc-mock-shield-layers {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.svc-mock-shield-layer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 6px 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.svc-mock-shield-layer-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00897b;
+  flex-shrink: 0;
+}
+
+.svc-mock-shield-layer-text {
+  font-size: 9px;
+  color: #555;
+  font-weight: 500;
+}
+
+.svc-mock-shield-layer-bar {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #00897b, transparent);
+}
+
+/* ================================================
+   SVC MOCKUP: Pentest — Terminal Output
+   ================================================ */
+.svc-mock-terminal {
+  width: 100%;
+  max-width: 230px;
+  background: #0d1117;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.svc-mock-terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #161b22;
+}
+
+.svc-mock-terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.svc-mock-terminal-dot:nth-child(1) {
+  background: #ff5f56;
+}
+.svc-mock-terminal-dot:nth-child(2) {
+  background: #ffbd2e;
+}
+.svc-mock-terminal-dot:nth-child(3) {
+  background: #27c93f;
+}
+
+.svc-mock-terminal-body {
+  padding: 12px 14px;
+  font-size: 9px;
+  line-height: 1.9;
+  color: #8b949e;
+}
+
+.svc-mock-terminal-prompt {
+  color: #58a6ff;
+}
+
+.svc-mock-terminal-success {
+  color: #3fb950;
+}
+
+.svc-mock-terminal-danger {
+  color: #f85149;
+}
+
+.svc-mock-terminal-highlight {
+  color: #d2a8ff;
+}
+
+/* ================================================
+   SVC MOCKUP: Engineering — Roadmap Timeline
+   ================================================ */
+.svc-mock-roadmap {
+  width: 100%;
+  max-width: 230px;
+  font-family: "Inter", sans-serif;
+}
+
+.svc-mock-roadmap-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.svc-mock-roadmap-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 18px;
+  bottom: 0;
+  width: 2px;
+  background: #ddd;
+}
+
+.svc-mock-roadmap-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #fff;
+  z-index: 1;
+}
+
+.svc-mock-roadmap-dot--done {
+  background: #00897b;
+}
+
+.svc-mock-roadmap-dot--active {
+  background: #004643;
+  box-shadow: 0 0 0 4px rgba(0, 70, 67, 0.15);
+}
+
+.svc-mock-roadmap-dot--pending {
+  background: #ddd;
+}
+
+.svc-mock-roadmap-text {
+  background: #fff;
+  border-radius: 6px;
+  padding: 6px 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  font-size: 10px;
+  color: #444;
+  font-weight: 500;
+  flex: 1;
+}
+
+/* ================================================
+   SVC MOCKUP: Research — Lab Data
+   ================================================ */
+.svc-mock-lab {
+  width: 100%;
+  max-width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 14px;
+  font-family: "Inter", sans-serif;
+}
+
+.svc-mock-lab-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.svc-mock-lab-icon {
+  color: #7c3aed;
+  font-size: 14px;
+}
+
+.svc-mock-lab-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #333;
+}
+
+.svc-mock-lab-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.svc-mock-lab-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 9px;
+}
+
+.svc-mock-lab-row-label {
+  color: #888;
+}
+
+.svc-mock-lab-row-val {
+  font-weight: 700;
+  color: #333;
+}
+
+.svc-mock-lab-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 36px;
+  margin-top: 10px;
+}
+
+.svc-mock-lab-bar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(180deg, #7c3aed, #c084fc);
+  min-height: 6px;
+}
+
+/* ================================================
+   SVC MOCKUP: Industrial Design — Sketch
+   ================================================ */
+.svc-mock-sketch {
+  width: 100%;
+  max-width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 14px;
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+
+.svc-mock-sketch-canvas {
+  width: 100%;
+  height: 80px;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  background: #fafafa;
+}
+
+.svc-mock-sketch-shape {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #004643;
+  border-radius: 8px;
+  position: relative;
+}
+
+.svc-mock-sketch-shape::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed #00897b;
+  border-radius: 4px;
+}
+
+.svc-mock-sketch-circle {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #f59e0b;
+  border-radius: 50%;
+}
+
+.svc-mock-sketch-tools {
+  display: flex;
+  gap: 6px;
+}
+
+.svc-mock-sketch-tool {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+}
+
+.svc-mock-sketch-tool:nth-child(1) {
+  background: #004643;
+}
+.svc-mock-sketch-tool:nth-child(2) {
+  background: #f59e0b;
+}
+.svc-mock-sketch-tool:nth-child(3) {
+  background: #e0e0e0;
+}
+.svc-mock-sketch-tool:nth-child(4) {
+  background: #7c3aed;
+}
+
+/* ================================================
+   SVC MOCKUP: Mechanical Eng — Blueprint
+   ================================================ */
+.svc-mock-blueprint {
+  width: 100%;
+  max-width: 220px;
+  background: #e8f0fe;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 14px;
+  font-family: "IBM Plex Mono", monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-mock-blueprint::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.svc-mock-blueprint-part {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+.svc-mock-blueprint-rect {
+  position: absolute;
+  border: 2px solid #2563eb;
+  border-radius: 4px;
+}
+
+.svc-mock-blueprint-rect--main {
+  width: 70%;
+  height: 100%;
+  left: 15%;
+  top: 0;
+}
+
+.svc-mock-blueprint-rect--inner {
+  width: 40%;
+  height: 50%;
+  left: 30%;
+  top: 25%;
+  border-style: dashed;
+  border-color: rgba(37, 99, 235, 0.5);
+}
+
+.svc-mock-blueprint-dim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.svc-mock-blueprint-dim-line {
+  flex: 1;
+  height: 1px;
+  background: #2563eb;
+}
+
+.svc-mock-blueprint-dim-text {
+  font-size: 8px;
+  color: #2563eb;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ================================================
+   SVC MOCKUP: Prototyping — Iteration Steps
+   ================================================ */
+.svc-mock-proto {
+  width: 100%;
+  max-width: 230px;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.svc-mock-proto-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.svc-mock-proto-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.svc-mock-proto-num--done {
+  background: #00897b;
+}
+.svc-mock-proto-num--active {
+  background: #004643;
+  box-shadow: 0 0 0 3px rgba(0, 70, 67, 0.15);
+}
+.svc-mock-proto-num--pending {
+  background: #ddd;
+  color: #999;
+}
+
+.svc-mock-proto-info {
+  flex: 1;
+}
+
+.svc-mock-proto-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.svc-mock-proto-sub {
+  font-size: 8px;
+  color: #999;
+}
+
+/* ================================================
+   SVC MOCKUP: Consulting — Presentation
+   ================================================ */
+.svc-mock-present {
+  width: 100%;
+  max-width: 230px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 14px;
+  font-family: "Inter", sans-serif;
+}
+
+.svc-mock-present-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.svc-mock-present-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #004643, #00897b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 11px;
+}
+
+.svc-mock-present-meta {
+  font-size: 9px;
+  color: #999;
+}
+
+.svc-mock-present-name {
+  font-size: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.svc-mock-present-kpis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.svc-mock-present-kpi {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+}
+
+.svc-mock-present-kpi-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: #004643;
+}
+
+.svc-mock-present-kpi-label {
+  font-size: 7px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ================================================
+   SVC MOCKUP: Graphic Design — Artboard
+   ================================================ */
+.svc-mock-artboard {
+  width: 100%;
+  max-width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 14px;
+  font-family: "Inter", sans-serif;
+}
+
+.svc-mock-artboard-canvas {
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #004643, #00897b, #e0f2f1);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svc-mock-artboard-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.svc-mock-artboard-palette {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.svc-mock-artboard-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.svc-mock-artboard-typo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.svc-mock-artboard-typo-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.svc-mock-artboard-typo-sample {
+  font-weight: 700;
+  font-size: 11px;
+  color: #333;
+}
+
+.svc-mock-artboard-typo-name {
+  font-size: 8px;
+  color: #aaa;
+}
+
+/* ================================================
+   SVC MOCKUP: Design Automation — Configurator
+   ================================================ */
+.svc-mock-config {
+  width: 100%;
+  max-width: 230px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+.svc-mock-config-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.svc-mock-config-icon {
+  color: #004643;
+  font-size: 14px;
+}
+
+.svc-mock-config-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #333;
+}
+
+.svc-mock-config-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.svc-mock-config-param {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.svc-mock-config-label {
+  font-size: 9px;
+  color: #888;
+}
+
+.svc-mock-config-slider {
+  width: 70px;
+  height: 6px;
+  border-radius: 3px;
+  background: #eee;
+  position: relative;
+}
+
+.svc-mock-config-slider-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #004643, #00897b);
+}
+
+.svc-mock-config-slider-thumb {
+  position: absolute;
+  top: -3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #004643;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.svc-mock-config-output {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-top: 1px solid #eee;
+  font-size: 9px;
+  font-weight: 600;
+  color: #00897b;
 }
 
 /* --- Card Content --- */
@@ -245,8 +1614,9 @@
     gap: 20px;
   }
 
-  .svc-card-image-wrapper {
-    height: 180px;
+  .svc-card-visual {
+    height: 200px;
+    padding: 20px;
   }
 
   .svc-card-content {
@@ -263,7 +1633,16 @@
     font-size: 15px;
   }
 
-  .svc-card-image-wrapper {
-    height: 160px;
+  .svc-card-visual {
+    height: 180px;
+    padding: 16px;
+  }
+
+  .svc-mock-kanban {
+    gap: 4px;
+  }
+
+  .svc-mock-transform {
+    gap: 8px;
   }
 }

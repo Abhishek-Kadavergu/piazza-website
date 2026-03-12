@@ -187,18 +187,27 @@
             href="software/application-development.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/application-development.jpg"
-                alt="Application Development"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-laptop-code"></i>
+            <div class="svc-card-visual svc-card-visual--app">
+              <div class="svc-mock-editor">
+                <div class="svc-mock-editor-bar">
+                  <span class="svc-mock-editor-dot"></span>
+                  <span class="svc-mock-editor-dot"></span>
+                  <span class="svc-mock-editor-dot"></span>
+                </div>
+                <div class="svc-mock-editor-body">
+                  <span class="cm">// Build something great</span><br />
+                  <span class="kw">const</span> <span class="fn">app</span>
+                  <span class="op">=</span> <span class="fn">createApp</span
+                  ><span class="op">({</span><br />
+                  &nbsp;&nbsp;<span class="api-key">scale</span
+                  ><span class="op">:</span>
+                  <span class="str">"enterprise"</span><span class="op">,</span
+                  ><br />
+                  &nbsp;&nbsp;<span class="api-key">deploy</span
+                  ><span class="op">:</span>
+                  <span class="str">"production"</span><br />
+                  <span class="op">});</span>
+                </div>
               </div>
             </div>
             <div class="svc-card-content">
@@ -219,18 +228,23 @@
             href="software/digital-transformation.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/digital-transformation.jpg"
-                alt="Digital Transformation"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-sync-alt"></i>
+            <div class="svc-card-visual svc-card-visual--transform">
+              <div class="svc-mock-transform">
+                <div class="svc-mock-transform-box svc-mock-transform-box--old">
+                  <div class="svc-mock-transform-label">Legacy</div>
+                  <div class="svc-mock-transform-icon">
+                    <i class="fas fa-server"></i>
+                  </div>
+                  <div class="svc-mock-transform-text">On-Premise</div>
+                </div>
+                <span class="svc-mock-transform-arrow">&rarr;</span>
+                <div class="svc-mock-transform-box svc-mock-transform-box--new">
+                  <div class="svc-mock-transform-label">Modern</div>
+                  <div class="svc-mock-transform-icon">
+                    <i class="fas fa-cloud"></i>
+                  </div>
+                  <div class="svc-mock-transform-text">Cloud-Native</div>
+                </div>
               </div>
             </div>
             <div class="svc-card-content">
@@ -251,18 +265,31 @@
             href="software/cloud-solutions.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/cloud-solutions.jpg"
-                alt="Cloud Solutions"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-cloud"></i>
+            <div class="svc-card-visual svc-card-visual--cloud">
+              <div class="svc-mock-cloud">
+                <div class="svc-mock-cloud-icon">
+                  <i class="fas fa-cloud"></i>
+                </div>
+                <div class="svc-mock-cloud-providers">
+                  <span class="svc-mock-cloud-chip">AWS</span>
+                  <span class="svc-mock-cloud-chip">Azure</span>
+                  <span class="svc-mock-cloud-chip">GCP</span>
+                </div>
+                <div class="svc-mock-cloud-bars">
+                  <div
+                    class="svc-mock-cloud-bar svc-mock-cloud-bar--fill"
+                  ></div>
+                  <div
+                    class="svc-mock-cloud-bar svc-mock-cloud-bar--fill"
+                  ></div>
+                  <div
+                    class="svc-mock-cloud-bar svc-mock-cloud-bar--fill"
+                  ></div>
+                  <div class="svc-mock-cloud-bar"></div>
+                </div>
+                <div class="svc-mock-cloud-status">
+                  <i class="fas fa-check-circle"></i> 99.99% Uptime
+                </div>
               </div>
             </div>
             <div class="svc-card-content">
@@ -283,18 +310,23 @@
             href="software/api-driven-development.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/api-driven-development.jpg"
-                alt="API Driven Development"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-plug"></i>
+            <div class="svc-card-visual svc-card-visual--api">
+              <div class="svc-mock-api">
+                <div class="svc-mock-api-method">
+                  <span class="svc-mock-api-badge">GET</span>
+                  <span class="svc-mock-api-url">/api/v2/users</span>
+                </div>
+                <div class="svc-mock-api-body">
+                  {<br />
+                  &nbsp;&nbsp;<span class="api-key">"status"</span>:
+                  <span class="api-val">"200 OK"</span>,<br />
+                  &nbsp;&nbsp;<span class="api-key">"data"</span>:
+                  <span class="api-val">[...]</span><br />
+                  }
+                </div>
+                <div class="svc-mock-api-status">
+                  <i class="fas fa-check-circle"></i> 42ms response
+                </div>
               </div>
             </div>
             <div class="svc-card-content">
@@ -315,18 +347,21 @@
             href="software/product-design.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/product-design.jpg"
-                alt="Product Design"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-pen-ruler"></i>
+            <div class="svc-card-visual svc-card-visual--design">
+              <div class="svc-mock-wireframe">
+                <div class="svc-mock-wireframe-nav">
+                  <div class="svc-mock-wireframe-logo"></div>
+                  <div class="svc-mock-wireframe-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="svc-mock-wireframe-hero"></div>
+                <div class="svc-mock-wireframe-cols">
+                  <div class="svc-mock-wireframe-col"></div>
+                  <div class="svc-mock-wireframe-col"></div>
+                  <div class="svc-mock-wireframe-col"></div>
+                </div>
+                <div class="svc-mock-wireframe-btn"></div>
               </div>
             </div>
             <div class="svc-card-content">
@@ -348,18 +383,33 @@
             href="software/product-project-management.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/product-project-management.jpg"
-                alt="Product & Project Management"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-tasks"></i>
+            <div class="svc-card-visual svc-card-visual--mgmt">
+              <div class="svc-mock-kanban">
+                <div class="svc-mock-kanban-col">
+                  <div class="svc-mock-kanban-title">To Do</div>
+                  <div class="svc-mock-kanban-card svc-mock-kanban-card--blue">
+                    Research
+                  </div>
+                  <div class="svc-mock-kanban-card">Planning</div>
+                </div>
+                <div class="svc-mock-kanban-col">
+                  <div class="svc-mock-kanban-title">In Progress</div>
+                  <div class="svc-mock-kanban-card svc-mock-kanban-card--amber">
+                    Design
+                  </div>
+                  <div class="svc-mock-kanban-card svc-mock-kanban-card--green">
+                    Develop
+                  </div>
+                </div>
+                <div class="svc-mock-kanban-col">
+                  <div class="svc-mock-kanban-title">Done</div>
+                  <div class="svc-mock-kanban-card svc-mock-kanban-card--green">
+                    Sprint 1
+                  </div>
+                  <div class="svc-mock-kanban-card svc-mock-kanban-card--green">
+                    QA Pass
+                  </div>
+                </div>
               </div>
             </div>
             <div class="svc-card-content">
@@ -381,18 +431,21 @@
             href="software/product-strategy.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/product-strategy.jpg"
-                alt="Product Strategy"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-chess"></i>
+            <div class="svc-card-visual svc-card-visual--strategy">
+              <div class="svc-mock-strategy">
+                <div class="svc-mock-strategy-grid">
+                  <div class="svc-mock-strategy-quad">Niche</div>
+                  <div
+                    class="svc-mock-strategy-quad svc-mock-strategy-quad--active"
+                  >
+                    Scale
+                  </div>
+                  <div class="svc-mock-strategy-quad">Explore</div>
+                  <div class="svc-mock-strategy-quad">Maintain</div>
+                </div>
+                <div class="svc-mock-strategy-badge">
+                  <i class="fas fa-crosshairs"></i> Product-Market Fit
+                </div>
               </div>
             </div>
             <div class="svc-card-content">

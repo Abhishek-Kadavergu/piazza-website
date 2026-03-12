@@ -183,18 +183,29 @@
             href="cyber/vciso-as-a-service.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/vciso-as-a-service.jpg"
-                alt="vCISO as a Service"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-user-shield"></i>
+            <div class="svc-card-visual svc-card-visual--vciso">
+              <div class="svc-mock-dashboard">
+                <div class="svc-mock-dashboard-header">
+                  <span class="svc-mock-dashboard-title">Security Score</span>
+                  <span class="svc-mock-dashboard-badge">Live</span>
+                </div>
+                <div class="svc-mock-dashboard-score">
+                  <div class="svc-mock-dashboard-ring">92</div>
+                </div>
+                <div class="svc-mock-dashboard-metrics">
+                  <div class="svc-mock-dashboard-metric">
+                    <div class="svc-mock-dashboard-metric-val">14</div>
+                    <div class="svc-mock-dashboard-metric-label">Policies</div>
+                  </div>
+                  <div class="svc-mock-dashboard-metric">
+                    <div class="svc-mock-dashboard-metric-val">3</div>
+                    <div class="svc-mock-dashboard-metric-label">Risks</div>
+                  </div>
+                  <div class="svc-mock-dashboard-metric">
+                    <div class="svc-mock-dashboard-metric-val">99%</div>
+                    <div class="svc-mock-dashboard-metric-label">Uptime</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="svc-card-content">
@@ -215,18 +226,33 @@
             href="cyber/security-consulting.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/security-consulting.jpg"
-                alt="Security Consulting"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-search"></i>
+            <div class="svc-card-visual svc-card-visual--seccon">
+              <div class="svc-mock-scan">
+                <div class="svc-mock-scan-bar">
+                  <span class="svc-mock-scan-dot"></span>
+                  <span class="svc-mock-scan-dot"></span>
+                  <span class="svc-mock-scan-dot"></span>
+                </div>
+                <div class="svc-mock-scan-body">
+                  <span class="svc-mock-scan-line--info"
+                    >$ threat-scan --deep</span
+                  ><br />
+                  <span class="svc-mock-scan-line--ok"
+                    >&#10003; Firewall rules .... OK</span
+                  ><br />
+                  <span class="svc-mock-scan-line--ok"
+                    >&#10003; Encryption ....... OK</span
+                  ><br />
+                  <span class="svc-mock-scan-line--warn"
+                    >&#9888; IAM policies ..... WARN</span
+                  ><br />
+                  <span class="svc-mock-scan-line--crit"
+                    >&#10007; Open ports ....... CRIT</span
+                  ><br />
+                  <span class="svc-mock-scan-line--info">
+                    3 findings reported</span
+                  >
+                </div>
               </div>
             </div>
             <div class="svc-card-content">
@@ -247,18 +273,48 @@
             href="cyber/pci-compliance.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/pci-compliance.jpg"
-                alt="PCI Compliance"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-credit-card"></i>
+            <div class="svc-card-visual svc-card-visual--pci">
+              <div class="svc-mock-checklist">
+                <div class="svc-mock-checklist-header">
+                  <span class="svc-mock-checklist-icon"
+                    ><i class="fas fa-credit-card"></i
+                  ></span>
+                  <span class="svc-mock-checklist-title">PCI DSS v4.0</span>
+                </div>
+                <div class="svc-mock-checklist-item">
+                  <span
+                    class="svc-mock-checklist-check svc-mock-checklist-check--done"
+                    ><i class="fas fa-check"></i
+                  ></span>
+                  <span>Network segmentation</span>
+                </div>
+                <div class="svc-mock-checklist-item">
+                  <span
+                    class="svc-mock-checklist-check svc-mock-checklist-check--done"
+                    ><i class="fas fa-check"></i
+                  ></span>
+                  <span>Data encryption</span>
+                </div>
+                <div class="svc-mock-checklist-item">
+                  <span
+                    class="svc-mock-checklist-check svc-mock-checklist-check--done"
+                    ><i class="fas fa-check"></i
+                  ></span>
+                  <span>Access control</span>
+                </div>
+                <div class="svc-mock-checklist-item">
+                  <span
+                    class="svc-mock-checklist-check svc-mock-checklist-check--pending"
+                    ><i class="fas fa-check"></i
+                  ></span>
+                  <span>Monitoring &amp; logging</span>
+                </div>
+                <div class="svc-mock-checklist-progress">
+                  <div
+                    class="svc-mock-checklist-progress-fill"
+                    style="width: 75%"
+                  ></div>
+                </div>
               </div>
             </div>
             <div class="svc-card-content">
@@ -280,18 +336,31 @@
             href="cyber/cloud-security.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/cloud-security.jpg"
-                alt="Cloud Security"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-cloud-upload-alt"></i>
+            <div class="svc-card-visual svc-card-visual--cloudsec">
+              <div class="svc-mock-shield">
+                <div class="svc-mock-shield-icon">
+                  <i class="fas fa-shield-alt"></i>
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div class="svc-mock-shield-layers">
+                  <div class="svc-mock-shield-layer">
+                    <span class="svc-mock-shield-layer-dot"></span>
+                    <span class="svc-mock-shield-layer-text"
+                      >Identity &amp; IAM</span
+                    >
+                    <span class="svc-mock-shield-layer-bar"></span>
+                  </div>
+                  <div class="svc-mock-shield-layer">
+                    <span class="svc-mock-shield-layer-dot"></span>
+                    <span class="svc-mock-shield-layer-text">Encryption</span>
+                    <span class="svc-mock-shield-layer-bar"></span>
+                  </div>
+                  <div class="svc-mock-shield-layer">
+                    <span class="svc-mock-shield-layer-dot"></span>
+                    <span class="svc-mock-shield-layer-text">Network Seg.</span>
+                    <span class="svc-mock-shield-layer-bar"></span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="svc-card-content">
@@ -313,18 +382,31 @@
             href="cyber/vulnerability-management-penetration-testing.html"
             class="svc-card ai-reveal ai-reveal-up"
           >
-            <div class="svc-card-image-wrapper">
-              <img
-                src="../assets/images-services/vulnerability-penetration-testing.jpg"
-                alt="Vulnerability Management & Penetration Testing"
-                class="svc-card-image"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
-              />
-              <div class="svc-card-image-fallback" style="display: none">
-                <i class="fas fa-bug"></i>
+            <div class="svc-card-visual svc-card-visual--pentest">
+              <div class="svc-mock-terminal">
+                <div class="svc-mock-terminal-bar">
+                  <span class="svc-mock-terminal-dot"></span>
+                  <span class="svc-mock-terminal-dot"></span>
+                  <span class="svc-mock-terminal-dot"></span>
+                </div>
+                <div class="svc-mock-terminal-body">
+                  <span class="svc-mock-terminal-prompt">$</span> nmap -sV
+                  target<br />
+                  <span class="svc-mock-terminal-highlight"
+                    >Scanning 1024 ports...</span
+                  ><br />
+                  <span class="svc-mock-terminal-success"
+                    >443/tcp open https</span
+                  ><br />
+                  <span class="svc-mock-terminal-danger"
+                    >8080/tcp open proxy</span
+                  ><br />
+                  <span class="svc-mock-terminal-success"
+                    >22/tcp filtered ssh</span
+                  ><br />
+                  <span class="svc-mock-terminal-prompt">$</span>
+                  <span style="opacity: 0.5">_</span>
+                </div>
               </div>
             </div>
             <div class="svc-card-content">
