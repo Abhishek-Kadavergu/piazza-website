@@ -607,6 +607,7 @@
                 loading="lazy"
               />
             </div>
+            <div class="expertise-card-overlay"></div>
             <div class="expertise-card-blur"></div>
             <div class="expertise-card-glass">
               <div class="expertise-card-tags">
@@ -645,6 +646,7 @@
                 loading="lazy"
               />
             </div>
+            <div class="expertise-card-overlay"></div>
             <div class="expertise-card-blur"></div>
             <div class="expertise-card-glass">
               <div class="expertise-card-tags">
@@ -683,6 +685,7 @@
                 loading="lazy"
               />
             </div>
+            <div class="expertise-card-overlay"></div>
             <div class="expertise-card-blur"></div>
             <div class="expertise-card-glass">
               <div class="expertise-card-tags">
@@ -721,6 +724,7 @@
                 loading="lazy"
               />
             </div>
+            <div class="expertise-card-overlay"></div>
             <div class="expertise-card-blur"></div>
             <div class="expertise-card-glass">
               <div class="expertise-card-tags">
@@ -763,6 +767,7 @@
                 loading="lazy"
               />
             </div>
+            <div class="expertise-card-overlay"></div>
             <div class="expertise-card-blur"></div>
             <div class="expertise-card-glass">
               <div class="expertise-card-tags">
@@ -1298,6 +1303,14 @@
           navMenu.classList.toggle("active");
         });
 
+        // Close mobile menu when clicking on the close button
+        navMenu.addEventListener("click", function (e) {
+          if (e.target === navMenu || e.offsetX > navMenu.offsetWidth - 55) {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          }
+        });
+
         // Close mobile menu when clicking on a link
         var navLinks = document.querySelectorAll(".nav-menu a");
         navLinks.forEach(function (link) {
@@ -1305,6 +1318,14 @@
             hamburger.classList.remove("active");
             navMenu.classList.remove("active");
           });
+        });
+
+        // Close mobile menu with Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && navMenu.classList.contains("active")) {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          }
         });
       })();
 
