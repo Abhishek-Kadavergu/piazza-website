@@ -1966,11 +1966,18 @@ video::-webkit-media-controls {
 .expertise-card[data-reveal="right"].is-visible {
   transform: translateX(0);
 }
+
+/* First card image positioning */
+.expertise-card[data-reveal="left"] .expertise-card-image-wrap img {
+  transform: translateY(-50px);
+  object-position: center top;
+}
+
 .expertise-card.is-visible:hover {
-  transform: translateY(-8px);
+  transform: translateY(-1px);
   border-color: rgba(0, 137, 123, 0.25);
   box-shadow:
-    0 24px 56px rgba(0, 70, 67, 0.14),
+    0 8px 24px rgba(0, 70, 67, 0.14),
     0 0 0 1px rgba(0, 137, 123, 0.08);
 }
 
