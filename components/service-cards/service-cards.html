@@ -1,0 +1,58 @@
+<!-- =============================================
+     SERVICE CARDS — Reusable Component Reference
+     Include this markup pattern on category pages.
+     Requires: /components/service-cards/service-cards.css
+     
+     Usage: Copy the <section> below into your page.
+     Replace badge text, title, subtitle, and cards
+     to match the service category.
+     ============================================= -->
+
+<!-- EXAMPLE: Software Engineering cards -->
+<section class="svc-cards-section">
+  <div class="w-layout-blockcontainer container w-container">
+    <!-- Section Header -->
+    <div class="svc-cards-header ai-reveal ai-reveal-up">
+      <div class="svc-cards-badge">
+        <i class="fas fa-code"></i>
+        <span>What We Build</span>
+      </div>
+      <h2 class="svc-cards-title">Our Services</h2>
+      <p class="svc-cards-subtitle">
+        Enterprise-grade solutions engineered for performance, scalability, and
+        reliability.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="svc-cards-grid">
+      <!-- Card Template -->
+      <a href="#" class="svc-card ai-reveal ai-reveal-up">
+        <div class="svc-card-image-wrapper">
+          <img
+            src="assets/images-services/example.jpg"
+            alt="Service Name"
+            class="svc-card-image"
+            onerror="
+              this.style.display = 'none';
+              this.nextElementSibling.style.display = 'flex';
+            "
+          />
+          <div class="svc-card-image-fallback" style="display: none">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+        </div>
+        <div class="svc-card-content">
+          <h3 class="svc-card-title">Service Name</h3>
+          <p class="svc-card-description">
+            Short description of the service capability, 1-2 lines.
+          </p>
+          <div class="svc-card-arrow">
+            <span>Learn more</span>
+            <span class="svc-card-arrow-icon">&rarr;</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

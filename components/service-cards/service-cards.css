@@ -1,0 +1,269 @@
+/* =============================================
+   SERVICE CARDS — Reusable Component Styles
+   Used across Software Engineering, Cyber Security,
+   Engineering category pages.
+   ============================================= */
+
+/* --- Section Layout --- */
+.svc-cards-section {
+  padding: 100px 0;
+  background: #f8f6f2;
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-cards-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.svc-cards-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(0, 70, 67, 0.08);
+  border: 1px solid rgba(0, 70, 67, 0.15);
+  color: #004643;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.svc-cards-badge i {
+  font-size: 14px;
+  color: #00897b;
+}
+
+.svc-cards-title {
+  font-family: "Poppins", "Inter", sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.svc-cards-subtitle {
+  font-size: 17px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* --- Card Grid --- */
+.svc-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* --- Individual Card --- */
+.svc-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 70, 67, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.svc-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(0, 70, 67, 0.12);
+  border-color: #00897b;
+}
+
+/* --- Card Image --- */
+.svc-card-image-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #e8f5f3, #d4edea);
+}
+
+.svc-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.svc-card:hover .svc-card-image {
+  transform: scale(1.06);
+}
+
+/* Fallback icon when no image is available */
+.svc-card-image-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: rgba(0, 70, 67, 0.2);
+}
+
+/* --- Card Content --- */
+.svc-card-content {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.svc-card-title {
+  font-family: "Poppins", "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.svc-card-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+/* --- Card Arrow --- */
+.svc-card-arrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #004643;
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+}
+
+.svc-card-arrow-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 70, 67, 0.06);
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+  font-size: 14px;
+}
+
+.svc-card:hover .svc-card-arrow {
+  color: #00897b;
+}
+
+.svc-card:hover .svc-card-arrow-icon {
+  background: #004643;
+  color: #fff;
+  transform: translateX(4px);
+}
+
+/* --- Green top accent line on hover --- */
+.svc-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #004643, #00897b);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.svc-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* --- Scroll Reveal Support --- */
+.svc-card.ai-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.svc-card.ai-reveal.ai-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.svc-card.ai-reveal.ai-visible:hover {
+  transform: translateY(-8px);
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablet: 2 columns */
+@media screen and (max-width: 991px) {
+  .svc-cards-section {
+    padding: 80px 0;
+  }
+
+  .svc-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Mobile: 1 column */
+@media screen and (max-width: 767px) {
+  .svc-cards-section {
+    padding: 60px 0;
+  }
+
+  .svc-cards-header {
+    margin-bottom: 40px;
+  }
+
+  .svc-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .svc-card-image-wrapper {
+    height: 180px;
+  }
+
+  .svc-card-content {
+    padding: 24px 20px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .svc-cards-title {
+    font-size: 28px;
+  }
+
+  .svc-cards-subtitle {
+    font-size: 15px;
+  }
+
+  .svc-card-image-wrapper {
+    height: 160px;
+  }
+}
