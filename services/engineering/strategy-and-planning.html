@@ -17,6 +17,224 @@
     <link href="../../css/webflow.css" rel="stylesheet" type="text/css" />
     <link href="../../css/ptcg.webflow.css" rel="stylesheet" type="text/css" />
     <link href="../../css/hero-redesign.css" rel="stylesheet" type="text/css" />
+    <style>
+      /* Responsive Styles for Strategy and Planning Page */
+      @media (max-width: 991px) {
+        /* Two-column grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"] {
+          grid-template-columns: 1fr !important;
+          gap: 40px !important;
+        }
+        
+        /* Three-column grids become two columns */
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 2x2 on tablet */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"] {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding on cards */
+        .step-card[style*="padding: 40px 32px"] {
+          padding: 32px 24px !important;
+        }
+        
+        /* Adjust text sizes */
+        .h2-heading {
+          font-size: 32px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 16px !important;
+          line-height: 1.6 !important;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        /* All grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"],
+        .w-layout-grid[style*="grid-template-columns: repeat(2, 1fr)"],
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: 1fr !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 1 column on mobile */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"],
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 16px"] {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding further on mobile */
+        .step-card[style*="padding: 40px 32px"],
+        .step-card[style*="padding: 32px 24px"] {
+          padding: 24px 20px !important;
+        }
+        
+        .project-result-card[style*="padding: 32px"] {
+          padding: 24px !important;
+        }
+        
+        /* Adjust text sizes for mobile */
+        .h1-heading {
+          font-size: 36px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .h2-heading {
+          font-size: 28px !important;
+          line-height: 1.3 !important;
+        }
+        
+        .h4-heading {
+          font-size: 18px !important;
+          line-height: 1.4 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .small-paragraph {
+          font-size: 14px !important;
+          line-height: 1.5 !important;
+        }
+        
+        /* Center content on mobile */
+        .common-heading-div.text-center {
+          text-align: center !important;
+        }
+        
+        /* Reduce margins */
+        .common-heading-div {
+          margin-bottom: 40px !important;
+        }
+        
+        /* Icon adjustments */
+        .step-detail-div > div[style*="width: 56px"] {
+          width: 48px !important;
+          height: 48px !important;
+          font-size: 20px !important;
+          margin-bottom: 16px !important;
+        }
+        
+        /* Button adjustments */
+        .service-detail-hero-button-div {
+          flex-direction: column !important;
+          gap: 16px !important;
+          align-items: center !important;
+        }
+        
+        .common-button {
+          width: 100% !important;
+          max-width: 280px !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        /* Extra small mobile adjustments */
+        .h1-heading {
+          font-size: 28px !important;
+        }
+        
+        .h2-heading {
+          font-size: 24px !important;
+        }
+        
+        .large-paragraph {
+          font-size: 14px !important;
+        }
+        
+        .paragraph {
+          font-size: 14px !important;
+        }
+        
+        .small-paragraph {
+          font-size: 13px !important;
+        }
+        
+        /* Minimal padding on small screens */
+        .step-card {
+          padding: 20px 16px !important;
+        }
+        
+        .project-result-card {
+          padding: 20px !important;
+        }
+        
+        /* Smaller icons */
+        .step-detail-div > div[style*="width: 56px"],
+        .step-detail-div > div[style*="width: 48px"] {
+          width: 40px !important;
+          height: 40px !important;
+          font-size: 18px !important;
+          margin-bottom: 12px !important;
+        }
+        
+        /* Tighter spacing */
+        .w-layout-grid {
+          gap: 16px !important;
+        }
+        
+        /* Reduce container padding */
+        .container {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+      }
+      
+      /* Ensure smooth transitions */
+      .step-card,
+      .project-result-card {
+        transition: all 0.3s ease !important;
+      }
+      
+      /* Hover effects for better UX */
+      .step-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      .project-result-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      /* Better text rendering */
+      body {
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+      
+      /* Ensure proper spacing */
+      .section {
+        padding: 80px 0 !important;
+      }
+      
+      @media (max-width: 767px) {
+        .section {
+          padding: 60px 0 !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        .section {
+          padding: 40px 0 !important;
+        }
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -82,9 +300,7 @@
             <div class="common-heading-div">
               <h1 class="h1-heading">Strategy and Planning</h1>
               <p class="large-paragraph service-detail-hero-paragraph">
-                Define engineering roadmaps, feasibility analyses, and strategic
-                plans that align technical capabilities with business objectives
-                and market opportunities.
+                We evaluate and define key project requirements to craft a strategic roadmap for development and commercialization.
               </p>
             </div>
             <div class="service-detail-hero-button-div">
@@ -98,6 +314,166 @@
               >
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro / Vision Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <div class="sub-heading-div">
+            <img
+              src="../../images/star.svg"
+              loading="lazy"
+              alt=""
+              class="sub-heading-icon"
+            />
+            <div class="small-paragraph sub-heading-text">
+              STRATEGY AND PLANNING
+            </div>
+          </div>
+          <h2 class="h2-heading">
+            Strategic Engineering Roadmap Development
+          </h2>
+          <p class="large-paragraph" style="margin-top: 24px">
+            We evaluate and define key project requirements to craft a strategic roadmap for development and commercialization, ensuring your engineering initiatives align with business objectives and market opportunities.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Project Evaluation & Strategic Alignment
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Our strategy and planning services focus on evaluating and defining key project requirements to craft strategic roadmaps for development and commercialization. We ensure your engineering initiatives are perfectly aligned with your business objectives and market opportunities.
+            </p>
+            <p class="paragraph">
+              We conduct comprehensive feasibility studies, market analysis, and technical assessments to identify potential challenges and opportunities, creating robust strategies that maximize project success and minimize risks.
+            </p>
+          </div>
+          <div
+            class="ai-reveal"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px"
+          >
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #004643">85%</div>
+                <div class="small-paragraph">Project Success Rate</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #004643">40%</div>
+                <div class="small-paragraph">Cost Reduction</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #004643">60%</div>
+                <div class="small-paragraph">Faster Time-to-Market</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #004643">100+</div>
+                <div class="small-paragraph">Strategic Plans</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Capability Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Comprehensive Project Evaluation
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Our strategic planning process begins with thorough project evaluation, where we assess technical feasibility, market viability, and resource requirements. We define key project requirements and success criteria to ensure clear direction and measurable outcomes.
+            </p>
+            <p class="paragraph" style="margin-bottom: 20px">
+              We analyze your current capabilities, market position, and competitive landscape to identify opportunities and challenges. Our approach ensures that your engineering strategy is built on solid foundations and aligned with realistic expectations.
+            </p>
+            <p class="paragraph">
+              Partner with us to develop strategic roadmaps that guide your development efforts from concept through commercialization, maximizing value creation and minimizing risks.
+            </p>
+          </div>
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Strategic Roadmap Development
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              We craft comprehensive strategic roadmaps that outline the path from development to commercialization. Our roadmaps include detailed timelines, resource allocation, risk mitigation strategies, and success metrics to ensure project execution stays on track.
+            </p>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Our strategic planning incorporates market analysis, technology trends, regulatory requirements, and business objectives to create holistic strategies that address all aspects of project success. We help you navigate complex decisions and prioritize initiatives for maximum impact.
+            </p>
+            <p class="paragraph">
+              Choose PCG for strategy and planning services that combine deep engineering expertise with strategic business thinking to deliver roadmaps that drive innovation and commercial success.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <h2 class="h2-heading" style="margin-bottom: 24px">
+            Why Choose PCG for Strategy and Planning?
+          </h2>
+          <p class="large-paragraph">
+            Partner with PCG for strategy and planning services that combine deep engineering expertise with strategic business thinking. We evaluate and define key project requirements to craft strategic roadmaps for development and commercialization that align with your business objectives.
+          </p>
+          <p class="large-paragraph" style="margin-top: 20px">
+            Choose PCG to develop comprehensive strategic plans that guide your engineering initiatives from concept through commercialization, ensuring maximum value creation and successful project outcomes.
+          </p>
         </div>
       </div>
     </section>

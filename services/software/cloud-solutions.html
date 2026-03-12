@@ -17,6 +17,224 @@
     <link href="../../css/webflow.css" rel="stylesheet" type="text/css" />
     <link href="../../css/ptcg.webflow.css" rel="stylesheet" type="text/css" />
     <link href="../../css/hero-redesign.css" rel="stylesheet" type="text/css" />
+    <style>
+      /* Responsive Styles for Cloud Solutions Page */
+      @media (max-width: 991px) {
+        /* Two-column grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"] {
+          grid-template-columns: 1fr !important;
+          gap: 40px !important;
+        }
+        
+        /* Three-column grids become two columns */
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 2x2 on tablet */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"] {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding on cards */
+        .step-card[style*="padding: 40px 32px"] {
+          padding: 32px 24px !important;
+        }
+        
+        /* Adjust text sizes */
+        .h2-heading {
+          font-size: 32px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 16px !important;
+          line-height: 1.6 !important;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        /* All grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"],
+        .w-layout-grid[style*="grid-template-columns: repeat(2, 1fr)"],
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: 1fr !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 1 column on mobile */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"],
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 16px"] {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding further on mobile */
+        .step-card[style*="padding: 40px 32px"],
+        .step-card[style*="padding: 32px 24px"] {
+          padding: 24px 20px !important;
+        }
+        
+        .project-result-card[style*="padding: 32px"] {
+          padding: 24px !important;
+        }
+        
+        /* Adjust text sizes for mobile */
+        .h1-heading {
+          font-size: 36px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .h2-heading {
+          font-size: 28px !important;
+          line-height: 1.3 !important;
+        }
+        
+        .h4-heading {
+          font-size: 18px !important;
+          line-height: 1.4 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .small-paragraph {
+          font-size: 14px !important;
+          line-height: 1.5 !important;
+        }
+        
+        /* Center content on mobile */
+        .common-heading-div.text-center {
+          text-align: center !important;
+        }
+        
+        /* Reduce margins */
+        .common-heading-div {
+          margin-bottom: 40px !important;
+        }
+        
+        /* Icon adjustments */
+        .step-detail-div > div[style*="width: 56px"] {
+          width: 48px !important;
+          height: 48px !important;
+          font-size: 20px !important;
+          margin-bottom: 16px !important;
+        }
+        
+        /* Button adjustments */
+        .service-detail-hero-button-div {
+          flex-direction: column !important;
+          gap: 16px !important;
+          align-items: center !important;
+        }
+        
+        .common-button {
+          width: 100% !important;
+          max-width: 280px !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        /* Extra small mobile adjustments */
+        .h1-heading {
+          font-size: 28px !important;
+        }
+        
+        .h2-heading {
+          font-size: 24px !important;
+        }
+        
+        .large-paragraph {
+          font-size: 14px !important;
+        }
+        
+        .paragraph {
+          font-size: 14px !important;
+        }
+        
+        .small-paragraph {
+          font-size: 13px !important;
+        }
+        
+        /* Minimal padding on small screens */
+        .step-card {
+          padding: 20px 16px !important;
+        }
+        
+        .project-result-card {
+          padding: 20px !important;
+        }
+        
+        /* Smaller icons */
+        .step-detail-div > div[style*="width: 56px"],
+        .step-detail-div > div[style*="width: 48px"] {
+          width: 40px !important;
+          height: 40px !important;
+          font-size: 18px !important;
+          margin-bottom: 12px !important;
+        }
+        
+        /* Tighter spacing */
+        .w-layout-grid {
+          gap: 16px !important;
+        }
+        
+        /* Reduce container padding */
+        .container {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+      }
+      
+      /* Ensure smooth transitions */
+      .step-card,
+      .project-result-card {
+        transition: all 0.3s ease !important;
+      }
+      
+      /* Hover effects for better UX */
+      .step-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      .project-result-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      /* Better text rendering */
+      body {
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+      
+      /* Ensure proper spacing */
+      .section {
+        padding: 80px 0 !important;
+      }
+      
+      @media (max-width: 767px) {
+        .section {
+          padding: 60px 0 !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        .section {
+          padding: 40px 0 !important;
+        }
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -77,19 +295,6 @@
         class="hero-background-image"
       />
       <div class="w-layout-blockcontainer container w-container">
-        <div class="service-detail-hero-div">
-          <div class="service-detail-hero-wrapper">
-            <div class="common-heading-div">
-              <h1 class="h1-heading">Cloud Solutions</h1>
-              <p class="large-paragraph service-detail-hero-paragraph">
-                Design, migrate, and manage cloud infrastructure on AWS, Azure,
-                and GCP — optimizing for performance, cost efficiency, and
-                scalability.
-              </p>
-            </div>
-            <div class="service-detail-hero-button-div">
-              <a href="../../contact-us.html" class="common-button w-button"
-                >Book a Consultation</a
               >
               <a
                 href="../software-engineering.html"
@@ -98,6 +303,166 @@
               >
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro / Vision Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <div class="sub-heading-div">
+            <img
+              src="../../images/star.svg"
+              loading="lazy"
+              alt=""
+              class="sub-heading-icon"
+            />
+            <div class="small-paragraph sub-heading-text">
+              CLOUD SOLUTIONS
+            </div>
+          </div>
+          <h2 class="h2-heading">
+            Enterprise-Grade Cloud Infrastructure & Services
+          </h2>
+          <p class="large-paragraph" style="margin-top: 24px">
+            Whether you're looking to transition to the cloud, optimize your existing cloud environment, or develop cloud-native applications, PCG has the expertise and experience to help you achieve your goals with confidence and precision.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Comprehensive Cloud Expertise
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Our cloud solutions encompass the full spectrum of cloud services from initial strategy and architecture design to implementation, optimization, and ongoing management. We ensure your cloud infrastructure is built to support your business objectives and scale with your growth.
+            </p>
+            <p class="paragraph">
+              Partner with PCG and leverage the scalability, flexibility, and cost-efficiency of cloud technology to propel your organization to new heights. Our team of cloud experts is dedicated to delivering solutions that drive business value and competitive advantage.
+            </p>
+          </div>
+          <div
+            class="ai-reveal"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px"
+          >
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">99.99%</div>
+                <div class="small-paragraph">Uptime Guarantee</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">40%</div>
+                <div class="small-paragraph">Cost Savings</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">10x</div>
+                <div class="small-paragraph">Scalability</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">24/7</div>
+                <div class="small-paragraph">Expert Support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Capability Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Strategic Cloud Architecture & Migration
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              We design and implement cloud architectures that are tailored to your specific business requirements, ensuring optimal performance, security, and cost-efficiency. Our migration services help you transition from legacy systems to modern cloud infrastructure with minimal disruption.
+            </p>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Whether you're looking to transition to the cloud, optimize your existing cloud environment, or develop cloud-native applications, PCG has the expertise and experience to help you achieve your goals with confidence and precision.
+            </p>
+            <p class="paragraph">
+              Our cloud solutions are designed to provide maximum flexibility and scalability, allowing your business to adapt quickly to changing market demands while maintaining optimal cost structures and operational efficiency.
+            </p>
+          </div>
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Cloud-Native Application Development
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              We specialize in developing cloud-native applications that are built from the ground up to leverage the full power of cloud computing. These applications are designed for scalability, resilience, and optimal performance in cloud environments.
+            </p>
+            <p class="paragraph">
+              Our cloud-native development services ensure that your applications can scale automatically, handle high availability requirements, and integrate seamlessly with other cloud services and on-premise systems.
+            </p>
+            <p class="paragraph">
+              From microservices architecture to serverless computing, we help you build applications that are not just hosted in the cloud, but are truly cloud-native, taking full advantage of cloud capabilities and cost models.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <h2 class="h2-heading" style="margin-bottom: 24px">
+            Why Choose PCG for Cloud Solutions?
+          </h2>
+          <p class="large-paragraph">
+            Partner with PCG to unlock the full potential of cloud computing for your business. Our comprehensive cloud solutions combine technical excellence with business understanding to deliver cloud infrastructure that drives growth, innovation, and competitive advantage.
+          </p>
+          <p class="large-paragraph" style="margin-top: 20px">
+            We provide end-to-end cloud services from strategy and implementation to optimization and management, ensuring your cloud journey is successful and delivers measurable business value.
+          </p>
         </div>
       </div>
     </section>

@@ -20,6 +20,224 @@
     <link href="../css/webflow.css" rel="stylesheet" type="text/css" />
     <link href="../css/ptcg.webflow.css" rel="stylesheet" type="text/css" />
     <link href="../css/hero-redesign.css" rel="stylesheet" type="text/css" />
+    <style>
+      /* Responsive Styles for Data Analytics Page */
+      @media (max-width: 991px) {
+        /* Two-column grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"] {
+          grid-template-columns: 1fr !important;
+          gap: 40px !important;
+        }
+        
+        /* Three-column grids become two columns */
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 2x2 on tablet */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"] {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding on cards */
+        .step-card[style*="padding: 40px 32px"] {
+          padding: 32px 24px !important;
+        }
+        
+        /* Adjust text sizes */
+        .h2-heading {
+          font-size: 32px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 16px !important;
+          line-height: 1.6 !important;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        /* All grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"],
+        .w-layout-grid[style*="grid-template-columns: repeat(2, 1fr)"],
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: 1fr !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 1 column on mobile */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"],
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 16px"] {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding further on mobile */
+        .step-card[style*="padding: 40px 32px"],
+        .step-card[style*="padding: 32px 24px"] {
+          padding: 24px 20px !important;
+        }
+        
+        .project-result-card[style*="padding: 32px"] {
+          padding: 24px !important;
+        }
+        
+        /* Adjust text sizes for mobile */
+        .h1-heading {
+          font-size: 36px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .h2-heading {
+          font-size: 28px !important;
+          line-height: 1.3 !important;
+        }
+        
+        .h4-heading {
+          font-size: 18px !important;
+          line-height: 1.4 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .small-paragraph {
+          font-size: 14px !important;
+          line-height: 1.5 !important;
+        }
+        
+        /* Center content on mobile */
+        .common-heading-div.text-center {
+          text-align: center !important;
+        }
+        
+        /* Reduce margins */
+        .common-heading-div {
+          margin-bottom: 40px !important;
+        }
+        
+        /* Icon adjustments */
+        .step-detail-div > div[style*="width: 56px"] {
+          width: 48px !important;
+          height: 48px !important;
+          font-size: 20px !important;
+          margin-bottom: 16px !important;
+        }
+        
+        /* Button adjustments */
+        .service-detail-hero-button-div {
+          flex-direction: column !important;
+          gap: 16px !important;
+          align-items: center !important;
+        }
+        
+        .common-button {
+          width: 100% !important;
+          max-width: 280px !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        /* Extra small mobile adjustments */
+        .h1-heading {
+          font-size: 28px !important;
+        }
+        
+        .h2-heading {
+          font-size: 24px !important;
+        }
+        
+        .large-paragraph {
+          font-size: 14px !important;
+        }
+        
+        .paragraph {
+          font-size: 14px !important;
+        }
+        
+        .small-paragraph {
+          font-size: 13px !important;
+        }
+        
+        /* Minimal padding on small screens */
+        .step-card {
+          padding: 20px 16px !important;
+        }
+        
+        .project-result-card {
+          padding: 20px !important;
+        }
+        
+        /* Smaller icons */
+        .step-detail-div > div[style*="width: 56px"],
+        .step-detail-div > div[style*="width: 48px"] {
+          width: 40px !important;
+          height: 40px !important;
+          font-size: 18px !important;
+          margin-bottom: 12px !important;
+        }
+        
+        /* Tighter spacing */
+        .w-layout-grid {
+          gap: 16px !important;
+        }
+        
+        /* Reduce container padding */
+        .container {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+      }
+      
+      /* Ensure smooth transitions */
+      .step-card,
+      .project-result-card {
+        transition: all 0.3s ease !important;
+      }
+      
+      /* Hover effects for better UX */
+      .step-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      .project-result-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      /* Better text rendering */
+      body {
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+      
+      /* Ensure proper spacing */
+      .section {
+        padding: 80px 0 !important;
+      }
+      
+      @media (max-width: 767px) {
+        .section {
+          padding: 60px 0 !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        .section {
+          padding: 40px 0 !important;
+        }
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -81,9 +299,7 @@
             <div class="common-heading-div">
               <h1 class="h1-heading">Data Analytics and Reporting</h1>
               <p class="large-paragraph service-detail-hero-paragraph">
-                Transform raw data into actionable insights with AI-powered
-                analytics dashboards, predictive models, and automated reporting
-                systems that drive smarter business decisions.
+                Discover Hidden Insights with PCG Data Analytics and Reporting
               </p>
             </div>
             <div class="service-detail-hero-button-div">
@@ -97,6 +313,417 @@
               >
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro / Vision Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <div class="sub-heading-div">
+            <img
+              src="../images/star.svg"
+              loading="lazy"
+              alt=""
+              class="sub-heading-icon"
+            />
+            <div class="small-paragraph sub-heading-text">
+              DATA ANALYTICS
+            </div>
+          </div>
+          <h2 class="h2-heading">
+            Analytics vs Reporting: Unlocking Data's Full Potential
+          </h2>
+          <p class="large-paragraph" style="margin-top: 24px">
+            Analytics involves data interpreting where reporting involving presenting factual, accurate data. Analytics answers why something is happening based on data, whereas reporting tells what's happening. Analytics delivers recommendations, but reporting is more about organizing and summarizing data. We have Best Data Engineers who build industry standard dashboards and get reports done for current markets and helps you to focus where is needed most.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Harness the Power of Data-Driven Decision Making
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Data is the lifeblood of modern enterprises, but harnessing its potential can be daunting. PCG's Data Analytics and Reporting services unlock actionable insights from raw data, enabling data-driven decision-making.
+            </p>
+            <p class="paragraph">
+              From predictive analytics to real-time reporting, businesses gain a competitive edge in today's data-driven landscape. Our AI-powered data analytics and reporting services help business gain insights from both external and internal sources without need for extensive human intervention.
+            </p>
+          </div>
+          <div
+            class="ai-reveal"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px"
+          >
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">85%</div>
+                <div class="small-paragraph">Data Accuracy</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">5x</div>
+                <div class="small-paragraph">Faster Insights</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">70%</div>
+                <div class="small-paragraph">Cost Reduction</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">24/7</div>
+                <div class="small-paragraph">Real-time Access</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Capability Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Transform Data into Strategic Opportunities
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Today's corporate world is driven by data. PCG data analytics and reporting gathers business data at scale, giving business deep insights. Our experts are trained to harness data and gain valuable insights into business data.
+            </p>
+            <p class="paragraph" style="margin-bottom: 20px">
+              PCG data analytics and reporting services will empower business to look beyond data and find possibilities to convert them into opportunities with help of automation technology. PCG's data analytics and reporting services allow clients to use advanced analytics and reporting tools without need for any upfront investment.
+            </p>
+            <p class="paragraph">
+              By leveraging PCG's intelligent data analytics and reporting services, business can make informed decisions and encourage innovations to progress further.
+            </p>
+          </div>
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Scalable Analytics for Dynamic Business Needs
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              We empower businesses to enhance their analytical capabilities to meet growing needs. The company using PCG's automated data analytics service can scale or diminish analytics capabilities as per the dynamic requirements of business, optimizing costs while adhering to the dynamic needs of the company.
+            </p>
+            <p class="paragraph">
+              The PCG automation solution service provider has gained a wealth of experience by handling data analytics and reporting services for different industry verticals. We help you create a clean data environment for your business and give quick access to quality data, fostering agile and informed decisions in business.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why PCG Data Analytics Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 800px; margin: 0 auto 60px"
+        >
+          <div class="sub-heading-div">
+            <img
+              src="../images/star.svg"
+              loading="lazy"
+              alt=""
+              class="sub-heading-icon"
+            />
+            <div class="small-paragraph sub-heading-text">WHY PCG</div>
+          </div>
+          <h2 class="h2-heading">Why PCG Data Analytics and Reporting Services?</h2>
+        </div>
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+          "
+        >
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Better Decision-Making
+              </div>
+              <p class="small-paragraph step-text">
+                PCG reporting tools foster better decision-making with relevant insights.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Visual Structure
+              </div>
+              <p class="small-paragraph step-text">
+                Provides easy understanding with visually structured reporting documents.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Multi-Format Analysis
+              </div>
+              <p class="small-paragraph step-text">
+                Generate reports by analyzing data from different document formats like Word, Excel, CSV files, database files, XML, and HTML content.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-eye"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                User-Friendly Reports
+              </div>
+              <p class="small-paragraph step-text">
+                Easy-to-use and visually appealing reports for easy understanding of business data insights.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-database"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Comprehensive Data Analysis
+              </div>
+              <p class="small-paragraph step-text">
+                Analyze unstructured, semi-structured, and structured data with the right tools and strategies for effective reporting.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-brain"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Advanced Analytics
+              </div>
+              <p class="small-paragraph step-text">
+                Deploy advanced analytics to provide new insights into business data and help them unlock opportunities.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-warehouse"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Data Warehouse
+              </div>
+              <p class="small-paragraph step-text">
+                Establish a data warehouse to analyze complex reports and extract insightful information from abundant data for better business decisions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <h2 class="h2-heading" style="margin-bottom: 24px">
+            Industry-Leading Data Analytics Expertise
+          </h2>
+          <p class="large-paragraph">
+            The experts here are capable of offering customized analytics and reporting services. We provide various services ranging from data management to data visualization, sales analytics, and more.
+          </p>
+          <p class="large-paragraph" style="margin-top: 20px">
+            AI-powered data analytics helps your business re-engineer the data landscape through custom strategies and tools and optimize data ingestion. With PCG's automated reporting and analytics software, you can easily create and share insightful business reports through reporting dashboards, hassle-free.
+          </p>
         </div>
       </div>
     </section>

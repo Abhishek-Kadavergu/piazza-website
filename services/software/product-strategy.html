@@ -17,6 +17,224 @@
     <link href="../../css/webflow.css" rel="stylesheet" type="text/css" />
     <link href="../../css/ptcg.webflow.css" rel="stylesheet" type="text/css" />
     <link href="../../css/hero-redesign.css" rel="stylesheet" type="text/css" />
+    <style>
+      /* Responsive Styles for Product Strategy Page */
+      @media (max-width: 991px) {
+        /* Two-column grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"] {
+          grid-template-columns: 1fr !important;
+          gap: 40px !important;
+        }
+        
+        /* Three-column grids become two columns */
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 2x2 on tablet */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"] {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding on cards */
+        .step-card[style*="padding: 40px 32px"] {
+          padding: 32px 24px !important;
+        }
+        
+        /* Adjust text sizes */
+        .h2-heading {
+          font-size: 32px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 16px !important;
+          line-height: 1.6 !important;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        /* All grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"],
+        .w-layout-grid[style*="grid-template-columns: repeat(2, 1fr)"],
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: 1fr !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 1 column on mobile */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"],
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 16px"] {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding further on mobile */
+        .step-card[style*="padding: 40px 32px"],
+        .step-card[style*="padding: 32px 24px"] {
+          padding: 24px 20px !important;
+        }
+        
+        .project-result-card[style*="padding: 32px"] {
+          padding: 24px !important;
+        }
+        
+        /* Adjust text sizes for mobile */
+        .h1-heading {
+          font-size: 36px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .h2-heading {
+          font-size: 28px !important;
+          line-height: 1.3 !important;
+        }
+        
+        .h4-heading {
+          font-size: 18px !important;
+          line-height: 1.4 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .small-paragraph {
+          font-size: 14px !important;
+          line-height: 1.5 !important;
+        }
+        
+        /* Center content on mobile */
+        .common-heading-div.text-center {
+          text-align: center !important;
+        }
+        
+        /* Reduce margins */
+        .common-heading-div {
+          margin-bottom: 40px !important;
+        }
+        
+        /* Icon adjustments */
+        .step-detail-div > div[style*="width: 56px"] {
+          width: 48px !important;
+          height: 48px !important;
+          font-size: 20px !important;
+          margin-bottom: 16px !important;
+        }
+        
+        /* Button adjustments */
+        .service-detail-hero-button-div {
+          flex-direction: column !important;
+          gap: 16px !important;
+          align-items: center !important;
+        }
+        
+        .common-button {
+          width: 100% !important;
+          max-width: 280px !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        /* Extra small mobile adjustments */
+        .h1-heading {
+          font-size: 28px !important;
+        }
+        
+        .h2-heading {
+          font-size: 24px !important;
+        }
+        
+        .large-paragraph {
+          font-size: 14px !important;
+        }
+        
+        .paragraph {
+          font-size: 14px !important;
+        }
+        
+        .small-paragraph {
+          font-size: 13px !important;
+        }
+        
+        /* Minimal padding on small screens */
+        .step-card {
+          padding: 20px 16px !important;
+        }
+        
+        .project-result-card {
+          padding: 20px !important;
+        }
+        
+        /* Smaller icons */
+        .step-detail-div > div[style*="width: 56px"],
+        .step-detail-div > div[style*="width: 48px"] {
+          width: 40px !important;
+          height: 40px !important;
+          font-size: 18px !important;
+          margin-bottom: 12px !important;
+        }
+        
+        /* Tighter spacing */
+        .w-layout-grid {
+          gap: 16px !important;
+        }
+        
+        /* Reduce container padding */
+        .container {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+      }
+      
+      /* Ensure smooth transitions */
+      .step-card,
+      .project-result-card {
+        transition: all 0.3s ease !important;
+      }
+      
+      /* Hover effects for better UX */
+      .step-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      .project-result-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      /* Better text rendering */
+      body {
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+      
+      /* Ensure proper spacing */
+      .section {
+        padding: 80px 0 !important;
+      }
+      
+      @media (max-width: 767px) {
+        .section {
+          padding: 60px 0 !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        .section {
+          padding: 40px 0 !important;
+        }
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -82,9 +300,7 @@
             <div class="common-heading-div">
               <h1 class="h1-heading">Product Strategy</h1>
               <p class="large-paragraph service-detail-hero-paragraph">
-                Define your product vision, market positioning, and go-to-market
-                plan with data-driven strategy consulting that aligns technology
-                capabilities with business objectives.
+                At PCG, we understand that a well-defined product strategy is essential for achieving sustainable growth and competitive advantage in today's rapidly evolving market. Our dedicated team of experts specializes in crafting strategic roadmaps that align with your business goals, market trends, and customer needs.
               </p>
             </div>
             <div class="service-detail-hero-button-div">
@@ -98,6 +314,163 @@
               >
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro / Vision Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <div class="sub-heading-div">
+            <img
+              src="../../images/star.svg"
+              loading="lazy"
+              alt=""
+              class="sub-heading-icon"
+            />
+            <div class="small-paragraph sub-heading-text">
+              PRODUCT STRATEGY
+            </div>
+          </div>
+          <h2 class="h2-heading">
+            Strategic Product Roadmap for Market Success
+          </h2>
+          <p class="large-paragraph" style="margin-top: 24px">
+            Our dedicated team of experts specializes in crafting strategic roadmaps that align with your business goals, market trends, and customer needs. Whether you're launching a new product, revitalizing an existing offering, or expanding into new markets, PCG offers comprehensive product strategy services to guide you every step of the way.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Data-Driven Strategic Planning
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              From market research and competitive analysis to product positioning and go-to-market strategies, we provide actionable insights and customized solutions to drive success. Our strategic approach ensures that your products achieve sustainable growth and competitive advantage.
+            </p>
+            <p class="paragraph">
+              We help you define clear product vision, establish realistic timelines, and create actionable plans that align with your business objectives and market opportunities. Our comprehensive approach ensures that your products achieve sustainable growth and competitive advantage.
+            </p>
+          </div>
+          <div
+            class="ai-reveal"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px"
+          >
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">95%</div>
+                <div class="small-paragraph">Market Alignment</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">3x</div>
+                <div class="small-paragraph">Faster Growth</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">85%</div>
+                <div class="small-paragraph">Competitive Advantage</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">100%</div>
+                <div class="small-paragraph">Strategic Success</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Capability Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Market Research & Competitive Analysis
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Our comprehensive market research and competitive analysis services provide deep insights into market trends, customer needs, and competitive landscape. We help you understand your target audience, identify market opportunities, and develop strategies that position your products for maximum impact.
+            </p>
+            <p class="paragraph" style="margin-bottom: 20px">
+              From market research and competitive analysis to product positioning and go-to-market strategies, we provide actionable insights and customized solutions to drive success. Our strategic approach ensures that your products achieve sustainable growth and competitive advantage.
+            </p>
+            <p class="paragraph">
+              Whether you're launching a new product, revitalizing an existing offering, or expanding into new markets, PCG offers comprehensive product strategy services to guide you every step of the way.
+            </p>
+          </div>
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Go-to-Market & Execution Strategies
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              We develop comprehensive go-to-market strategies that ensure successful product launches and market penetration. Our execution strategies include pricing models, distribution channels, marketing campaigns, and sales enablement that drive adoption and revenue growth.
+            </p>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Partner with PCG and let us help you define and execute a winning product strategy that sets your business apart in competitive marketplace and drives sustainable growth and market leadership.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <h2 class="h2-heading" style="margin-bottom: 24px">
+            Why Partner with PCG for Product Strategy?
+          </h2>
+          <p class="large-paragraph">
+            Choose PCG for product strategy services that combine deep market insights with strategic planning to create products that win in competitive marketplace. Our data-driven approach ensures that your product decisions are backed by research, analytics, and expert guidance.
+          </p>
+          <p class="large-paragraph" style="margin-top: 20px">
+            Partner with PCG and let us help you define and execute a winning product strategy that sets your business apart in competitive marketplace and drives sustainable growth and market leadership.
+          </p>
         </div>
       </div>
     </section>

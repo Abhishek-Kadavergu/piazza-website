@@ -17,6 +17,224 @@
     <link href="../css/webflow.css" rel="stylesheet" type="text/css" />
     <link href="../css/ptcg.webflow.css" rel="stylesheet" type="text/css" />
     <link href="../css/hero-redesign.css" rel="stylesheet" type="text/css" />
+    <style>
+      /* Responsive Styles for Automation Page */
+      @media (max-width: 991px) {
+        /* Two-column grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"] {
+          grid-template-columns: 1fr !important;
+          gap: 40px !important;
+        }
+        
+        /* Three-column grids become two columns */
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 2x2 on tablet */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"] {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding on cards */
+        .step-card[style*="padding: 40px 32px"] {
+          padding: 32px 24px !important;
+        }
+        
+        /* Adjust text sizes */
+        .h2-heading {
+          font-size: 32px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 16px !important;
+          line-height: 1.6 !important;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        /* All grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"],
+        .w-layout-grid[style*="grid-template-columns: repeat(2, 1fr)"],
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: 1fr !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 1 column on mobile */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"],
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 16px"] {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding further on mobile */
+        .step-card[style*="padding: 40px 32px"],
+        .step-card[style*="padding: 32px 24px"] {
+          padding: 24px 20px !important;
+        }
+        
+        .project-result-card[style*="padding: 32px"] {
+          padding: 24px !important;
+        }
+        
+        /* Adjust text sizes for mobile */
+        .h1-heading {
+          font-size: 36px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .h2-heading {
+          font-size: 28px !important;
+          line-height: 1.3 !important;
+        }
+        
+        .h4-heading {
+          font-size: 18px !important;
+          line-height: 1.4 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .small-paragraph {
+          font-size: 14px !important;
+          line-height: 1.5 !important;
+        }
+        
+        /* Center content on mobile */
+        .common-heading-div.text-center {
+          text-align: center !important;
+        }
+        
+        /* Reduce margins */
+        .common-heading-div {
+          margin-bottom: 40px !important;
+        }
+        
+        /* Icon adjustments */
+        .step-detail-div > div[style*="width: 56px"] {
+          width: 48px !important;
+          height: 48px !important;
+          font-size: 20px !important;
+          margin-bottom: 16px !important;
+        }
+        
+        /* Button adjustments */
+        .service-detail-hero-button-div {
+          flex-direction: column !important;
+          gap: 16px !important;
+          align-items: center !important;
+        }
+        
+        .common-button {
+          width: 100% !important;
+          max-width: 280px !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        /* Extra small mobile adjustments */
+        .h1-heading {
+          font-size: 28px !important;
+        }
+        
+        .h2-heading {
+          font-size: 24px !important;
+        }
+        
+        .large-paragraph {
+          font-size: 14px !important;
+        }
+        
+        .paragraph {
+          font-size: 14px !important;
+        }
+        
+        .small-paragraph {
+          font-size: 13px !important;
+        }
+        
+        /* Minimal padding on small screens */
+        .step-card {
+          padding: 20px 16px !important;
+        }
+        
+        .project-result-card {
+          padding: 20px !important;
+        }
+        
+        /* Smaller icons */
+        .step-detail-div > div[style*="width: 56px"],
+        .step-detail-div > div[style*="width: 48px"] {
+          width: 40px !important;
+          height: 40px !important;
+          font-size: 18px !important;
+          margin-bottom: 12px !important;
+        }
+        
+        /* Tighter spacing */
+        .w-layout-grid {
+          gap: 16px !important;
+        }
+        
+        /* Reduce container padding */
+        .container {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+      }
+      
+      /* Ensure smooth transitions */
+      .step-card,
+      .project-result-card {
+        transition: all 0.3s ease !important;
+      }
+      
+      /* Hover effects for better UX */
+      .step-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      .project-result-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      /* Better text rendering */
+      body {
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+      
+      /* Ensure proper spacing */
+      .section {
+        padding: 80px 0 !important;
+      }
+      
+      @media (max-width: 767px) {
+        .section {
+          padding: 60px 0 !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        .section {
+          padding: 40px 0 !important;
+        }
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -78,9 +296,7 @@
             <div class="common-heading-div">
               <h1 class="h1-heading">Automation</h1>
               <p class="large-paragraph service-detail-hero-paragraph">
-                Streamline end-to-end business processes with intelligent
-                workflow automation that eliminates manual effort and
-                accelerates operational outcomes.
+                Become a Digital Enterprise with PCG Automation Solutions.
               </p>
             </div>
             <div class="service-detail-hero-button-div">
@@ -94,6 +310,575 @@
               >
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro / Vision Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <div class="sub-heading-div">
+            <img
+              src="../images/star.svg"
+              loading="lazy"
+              alt=""
+              class="sub-heading-icon"
+            />
+            <div class="small-paragraph sub-heading-text">
+              AUTOMATION
+            </div>
+          </div>
+          <h2 class="h2-heading">
+            Transform Business Operations with Intelligent Automation
+          </h2>
+          <p class="large-paragraph" style="margin-top: 24px">
+            PCG has well trained engineers in creating software bots that can automate repetitive business tasks and reduce human dependency. It helps to speeds up delivery of IT infrastructure and applications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Revolutionize Business Operations with Automation
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              PCG's Automation tool transcend boundaries, revolutionizing how businesses operate. Whether it's orchestrating workflows or optimizing supply chains, automation empowers businesses to thrive in an ever-evolving landscape.
+            </p>
+            <p class="paragraph">
+              With PCG as a strategic partner, businesses can embrace automation with confidence, driving sustainable growth and innovation. Our automation software allows you to take care of what is essential to business and automate the rest.
+            </p>
+          </div>
+          <div
+            class="ai-reveal"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px"
+          >
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">75%</div>
+                <div class="small-paragraph">Time Savings</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">90%</div>
+                <div class="small-paragraph">Error Reduction</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">3x</div>
+                <div class="small-paragraph">Productivity Boost</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">60%</div>
+                <div class="small-paragraph">Cost Efficiency</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Capability Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Digital Transformation for Enhanced Productivity
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Accelerate your business's digital transformation with PCG automation services. Automated solutions combine the real and digital worlds of business for improved efficiency and enhanced productivity. We empower your team to do more with less effort.
+            </p>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Business automation for your organization aims to highlight and remove process inefficiencies and automate repetitive tasks. Different automation tools help digitize traditional paper-based processes of business and capture unique business workflows in a digital workstream.
+            </p>
+            <p class="paragraph">
+              Our automation solutions can be tailored to make unique business workflows much simpler, more convenient, and efficient in operations. The automation software can automate all rule- or logic-based parts of business process and enhance human resource productivity, minimizing errors.
+            </p>
+          </div>
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Scalable Automation for Business Growth
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Business automation can digitize businesses of any size, from small organizations to corporates, improving their efficiency. Automation software can be a part of your business at every step of the workflow.
+            </p>
+            <p class="paragraph">
+              PCG's automation services help you stay ahead of the highly competitive digital world by helping you align resources and technology to achieve your business goals. We believe that people, processes, and technology determine business performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 800px; margin: 0 auto 60px"
+        >
+          <div class="sub-heading-div">
+            <img
+              src="../images/star.svg"
+              loading="lazy"
+              alt=""
+              class="sub-heading-icon"
+            />
+            <div class="small-paragraph sub-heading-text">APPLICATIONS</div>
+          </div>
+          <h2 class="h2-heading">Application of Automation Services</h2>
+        </div>
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+          "
+        >
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Workflow Management
+              </div>
+              <p class="small-paragraph step-text">
+                Our automation solutions help your business streamline processes for completion of tasks on time.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-folder-open"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Document Management
+              </div>
+              <p class="small-paragraph step-text">
+                Our automation software stores, organizes, and manages documents for easy access and secure storage.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-tasks"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Task Automation & Scheduling
+              </div>
+              <p class="small-paragraph step-text">
+                Automates time-consuming tasks, freeing human resources for strategic initiatives.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-cogs"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Business Rules Engine
+              </div>
+              <p class="small-paragraph step-text">
+                Automates complex business tasks, ensuring consistency and accuracy.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Analytics & Reporting
+              </div>
+              <p class="small-paragraph step-text">
+                Offers your business data-driven insights for effective decision-making.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why PCG Automation Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 800px; margin: 0 auto 60px"
+        >
+          <div class="sub-heading-div">
+            <img
+              src="../images/star.svg"
+              loading="lazy"
+              alt=""
+              class="sub-heading-icon"
+            />
+            <div class="small-paragraph sub-heading-text">WHY PCG</div>
+          </div>
+          <h2 class="h2-heading">Why PCG Automation Services?</h2>
+        </div>
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+          "
+        >
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-search"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Meticulous Analysis
+              </div>
+              <p class="small-paragraph step-text">
+                We conduct meticulous analysis of business workflow to identify business inefficiencies that need improvement before deploying automation solutions.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Bottleneck Identification
+              </div>
+              <p class="small-paragraph step-text">
+                Our experts read into common bottlenecks and errors that delay business processes and offer tailored business automation solutions.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-sync-alt"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Workflow Redefinition
+              </div>
+              <p class="small-paragraph step-text">
+                Redefine business workflows using automation software in target process for improved efficiency.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-building"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Stable Foundation
+              </div>
+              <p class="small-paragraph step-text">
+                Our stable automation solutions help businesses drive towards business goals by serving as a foundation for usual business operations.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-expand-arrows-alt"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Scalable Architecture
+              </div>
+              <p class="small-paragraph step-text">
+                We deploy our business automation architecture for scalability to ensure AI solutions don't hamper quality when business grows.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-smile"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Enhanced Experience
+              </div>
+              <p class="small-paragraph step-text">
+                We have designed our business automation solutions to create a better experience for both your customers and employees.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <h2 class="h2-heading" style="margin-bottom: 24px">
+            Strategic Partnership for Digital Excellence
+          </h2>
+          <p class="large-paragraph">
+            And let us handle the technology part for you and bring consistency across process for enhanced efficiency. We leverage the potential of automation to redefine your business workflow for better business insights and smoother workflows.
+          </p>
+          <p class="large-paragraph" style="margin-top: 20px">
+            PCG's expert team works closely in collaboration with your business to ensure the business automation solutions offered by us give the best return on investment.
+          </p>
         </div>
       </div>
     </section>

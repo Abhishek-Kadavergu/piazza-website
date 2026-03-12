@@ -17,6 +17,224 @@
     <link href="../css/webflow.css" rel="stylesheet" type="text/css" />
     <link href="../css/ptcg.webflow.css" rel="stylesheet" type="text/css" />
     <link href="../css/hero-redesign.css" rel="stylesheet" type="text/css" />
+    <style>
+      /* Responsive Styles for Document AI Page */
+      @media (max-width: 991px) {
+        /* Two-column grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"] {
+          grid-template-columns: 1fr !important;
+          gap: 40px !important;
+        }
+        
+        /* Three-column grids become two columns */
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 2x2 on tablet */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"] {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding on cards */
+        .step-card[style*="padding: 40px 32px"] {
+          padding: 32px 24px !important;
+        }
+        
+        /* Adjust text sizes */
+        .h2-heading {
+          font-size: 32px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 16px !important;
+          line-height: 1.6 !important;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        /* All grids become single column */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr"],
+        .w-layout-grid[style*="grid-template-columns: repeat(2, 1fr)"],
+        .w-layout-grid[style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: 1fr !important;
+          gap: 24px !important;
+        }
+        
+        /* Stats grid - 1 column on mobile */
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 20px"],
+        .w-layout-grid[style*="grid-template-columns: 1fr 1fr; gap: 16px"] {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        
+        /* Reduce padding further on mobile */
+        .step-card[style*="padding: 40px 32px"],
+        .step-card[style*="padding: 32px 24px"] {
+          padding: 24px 20px !important;
+        }
+        
+        .project-result-card[style*="padding: 32px"] {
+          padding: 24px !important;
+        }
+        
+        /* Adjust text sizes for mobile */
+        .h1-heading {
+          font-size: 36px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .h2-heading {
+          font-size: 28px !important;
+          line-height: 1.3 !important;
+        }
+        
+        .h4-heading {
+          font-size: 18px !important;
+          line-height: 1.4 !important;
+        }
+        
+        .large-paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .paragraph {
+          font-size: 15px !important;
+          line-height: 1.6 !important;
+        }
+        
+        .small-paragraph {
+          font-size: 14px !important;
+          line-height: 1.5 !important;
+        }
+        
+        /* Center content on mobile */
+        .common-heading-div.text-center {
+          text-align: center !important;
+        }
+        
+        /* Reduce margins */
+        .common-heading-div {
+          margin-bottom: 40px !important;
+        }
+        
+        /* Icon adjustments */
+        .step-detail-div > div[style*="width: 56px"] {
+          width: 48px !important;
+          height: 48px !important;
+          font-size: 20px !important;
+          margin-bottom: 16px !important;
+        }
+        
+        /* Button adjustments */
+        .service-detail-hero-button-div {
+          flex-direction: column !important;
+          gap: 16px !important;
+          align-items: center !important;
+        }
+        
+        .common-button {
+          width: 100% !important;
+          max-width: 280px !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        /* Extra small mobile adjustments */
+        .h1-heading {
+          font-size: 28px !important;
+        }
+        
+        .h2-heading {
+          font-size: 24px !important;
+        }
+        
+        .large-paragraph {
+          font-size: 14px !important;
+        }
+        
+        .paragraph {
+          font-size: 14px !important;
+        }
+        
+        .small-paragraph {
+          font-size: 13px !important;
+        }
+        
+        /* Minimal padding on small screens */
+        .step-card {
+          padding: 20px 16px !important;
+        }
+        
+        .project-result-card {
+          padding: 20px !important;
+        }
+        
+        /* Smaller icons */
+        .step-detail-div > div[style*="width: 56px"],
+        .step-detail-div > div[style*="width: 48px"] {
+          width: 40px !important;
+          height: 40px !important;
+          font-size: 18px !important;
+          margin-bottom: 12px !important;
+        }
+        
+        /* Tighter spacing */
+        .w-layout-grid {
+          gap: 16px !important;
+        }
+        
+        /* Reduce container padding */
+        .container {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+      }
+      
+      /* Ensure smooth transitions */
+      .step-card,
+      .project-result-card {
+        transition: all 0.3s ease !important;
+      }
+      
+      /* Hover effects for better UX */
+      .step-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      .project-result-card:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      /* Better text rendering */
+      body {
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+      
+      /* Ensure proper spacing */
+      .section {
+        padding: 80px 0 !important;
+      }
+      
+      @media (max-width: 767px) {
+        .section {
+          padding: 60px 0 !important;
+        }
+      }
+      
+      @media (max-width: 479px) {
+        .section {
+          padding: 40px 0 !important;
+        }
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -78,9 +296,7 @@
             <div class="common-heading-div">
               <h1 class="h1-heading">Document AI</h1>
               <p class="large-paragraph service-detail-hero-paragraph">
-                Automatically extract, classify, and process documents at scale
-                — from invoices and contracts to unstructured data — with
-                enterprise-grade accuracy and intelligent automation.
+                Amidst the Chaos of Document Management with Document AI
               </p>
             </div>
             <div class="service-detail-hero-button-div">
@@ -94,6 +310,481 @@
               >
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro / Vision Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <div class="sub-heading-div">
+            <img
+              src="../images/star.svg"
+              loading="lazy"
+              alt=""
+              class="sub-heading-icon"
+            />
+            <div class="small-paragraph sub-heading-text">
+              DOCUMENT AI
+            </div>
+          </div>
+          <h2 class="h2-heading">
+            Intelligent Document Processing for Modern Business
+          </h2>
+          <p class="large-paragraph" style="margin-top: 24px">
+            Our Document AI Solution or Document Intelligence solution is a technology that uses natural language processing (NLP) and machine learning (ML) to train computers to simulate a human review of documents. And is used to process and parse forms, tables, receipts, invoices, tax forms, contracts, loan agreements, financial reports, etc.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Navigate Document Chaos with Surgical Precision
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Navigating the sea of documents can be daunting, but with PCG's Document AI solutions, businesses gain clarity amidst chaos. Harnessing the power of machine learning, Document AI categories, extracts, and analyses documents with surgical precision.
+            </p>
+            <p class="paragraph">
+              From compliance audits to contract management, businesses can make informed decisions with confidence. Our intelligent document service uses intelligent OCR and NLP technology to extract information from unstructured data and expedite the tiring task of retrieving information with ease.
+            </p>
+          </div>
+          <div
+            class="ai-reveal"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px"
+          >
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">95%</div>
+                <div class="small-paragraph">Processing Accuracy</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">80%</div>
+                <div class="small-paragraph">Cost Reduction</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">10x</div>
+                <div class="small-paragraph">Faster Processing</div>
+              </div>
+            </div>
+            <div
+              class="project-result-card"
+              style="padding: 32px; border-radius: 16px"
+            >
+              <div class="project-result-detail-div">
+                <div class="h2-heading" style="color: #00897b">100%</div>
+                <div class="small-paragraph">Data Security</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Capability Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Transform Unstructured Data into Actionable Insights
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              Are you stuck pulling out the information and source from the huge database? Leverage the power of document AI solutions for your business. AI can help in pulling out the critical pieces of information that are needed to conduct everyday business.
+            </p>
+            <p class="paragraph" style="margin-bottom: 20px">
+              PCG Document AI Solutions transforms unstructured documents into machine-readable formats to drive business predictions. Our document-intelligent tool will help you increase process efficiency and reduce costs.
+            </p>
+            <p class="paragraph">
+              We help you visualize the most critical business data, including handwritten documents, and help companies enhance workflow and compliance. The digitized electronic documents are organized and stored securely, facilitating anytime, anywhere access for the business.
+            </p>
+          </div>
+          <div class="ai-reveal">
+            <h2 class="h2-heading" style="margin-bottom: 24px">
+              Scalable Automation for Modern Enterprises
+            </h2>
+            <p class="paragraph" style="margin-bottom: 20px">
+              PCG's document AI can automate any kind of document, facilitating security and easy access to your business documents while fostering transparency in the organization. Our AI solutions are built on a deep understanding of customer requirements and can fit into any kind of document digitization and data extraction task.
+            </p>
+            <p class="paragraph">
+              Our services are priced to fit the budgets of companies of all sizes. We promise flexible functionality for all your document automation needs. We help you get better data insights at scale for better business decision-making.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why PCG Document AI Section -->
+    <section class="section gray-background">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 800px; margin: 0 auto 60px"
+        >
+          <div class="sub-heading-div">
+            <img
+              src="../images/star.svg"
+              loading="lazy"
+              alt=""
+              class="sub-heading-icon"
+            />
+            <div class="small-paragraph sub-heading-text">WHY PCG</div>
+          </div>
+          <h2 class="h2-heading">Why PCG for Document AI Services?</h2>
+        </div>
+        <div
+          class="w-layout-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+          "
+        >
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-clock"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Optimal Data Uptime
+              </div>
+              <p class="small-paragraph step-text">
+                PCG helps the clients maintain the uptime of the data and facilitates connecting it with the right user at the right time.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-server"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Complex Data Management
+              </div>
+              <p class="small-paragraph step-text">
+                Our document AI solutions help you maintain complex data platforms, ensuring cost efficiency, security, and sustainability.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Robust Security & Compliance
+              </div>
+              <p class="small-paragraph step-text">
+                Backed by our robust partnership with AI technology, we offer adequate data security, privacy, and compliance.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-expand-arrows-alt"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Scalable Solutions
+              </div>
+              <p class="small-paragraph step-text">
+                PCG's document AI solutions can scale as your business grows and handle increasing volumes of data without hassle.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-sync-alt"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Adaptive Automation
+              </div>
+              <p class="small-paragraph step-text">
+                Our automation services can quickly adapt to different types of documents and formats, addressing diverse business needs.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-mouse-pointer"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Intuitive Interfaces
+              </div>
+              <p class="small-paragraph step-text">
+                The PCG document intelligence service uses intuitive interfaces for easy interaction with the system without additional training.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-cut"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Tailored Solutions
+              </div>
+              <p class="small-paragraph step-text">
+                We offer tailored document AI solutions by analyzing the unique data needs of the business.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-handshake"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Trusted Support
+              </div>
+              <p class="small-paragraph step-text">
+                We are trusted by different industries for continuous support and updates to keep your systems running smoothly.
+              </p>
+            </div>
+          </div>
+          <div
+            class="ai-reveal step-card"
+            style="padding: 40px 32px; border-radius: 16px"
+          >
+            <div class="step-detail-div">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 12px;
+                  background: rgba(0, 134, 123, 0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                  font-size: 24px;
+                  color: #00897b;
+                "
+              >
+                <i class="fas fa-plug"></i>
+              </div>
+              <div
+                class="h4-heading step-heading-text"
+                style="margin-bottom: 12px"
+              >
+                Easy Integration
+              </div>
+              <p class="small-paragraph step-text">
+                It easily integrates with existing applications and workflows for efficient document management.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div
+          class="ai-reveal common-heading-div text-center"
+          style="max-width: 900px; margin: 0 auto"
+        >
+          <h2 class="h2-heading" style="margin-bottom: 24px">
+            Future-Ready Data Automation Expertise
+          </h2>
+          <p class="large-paragraph">
+            PCG experts help you adopt future-ready data automation by removing the barriers to the accessibility and accuracy of the information. With our deep expertise in data frameworks, we help you build data-driven capabilities and ensure your business derives maximum value from AI.
+          </p>
+          <p class="large-paragraph" style="margin-top: 20px">
+            Our PCG's Document AI solutions, combined with the latest technology, infuse into your existing data architecture and help you jumpstart your data modernization journey and accelerate data preparation with workflow automation services. We help you make your data more valuable and provide advanced data insights for crucial business decisions.
+          </p>
         </div>
       </div>
     </section>
