@@ -1697,6 +1697,15 @@ border-radius: 100px !important;
       hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      navMenu.addEventListener('click', function(e) {
+        if (e.target === navMenu) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
       });
 
       var navLinks = document.querySelectorAll('.nav-menu a');
@@ -1704,7 +1713,16 @@ border-radius: 100px !important;
         link.addEventListener('click', function() {
           hamburger.classList.remove('active');
           navMenu.classList.remove('active');
+          document.body.style.overflow = '';
         });
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
       });
     })();
 

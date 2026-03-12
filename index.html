@@ -499,7 +499,7 @@
           />
         </a>
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#">Piazza</a></li>
+          <li><a href="index.html">Piazza</a></li>
           <li><a href="work.html">Products</a></li>
           <li><a href="services.html">Services</a></li>
           <!-- <li><a href="about-us.html">About Us</a></li> -->
@@ -677,7 +677,7 @@
           </a>
 
           <!-- Card 3: Mortgage Services -->
-          <a href="services.html" class="expertise-card" data-reveal="left">
+          <!-- <a href="services.html" class="expertise-card" data-reveal="left">
             <div class="expertise-card-image-wrap">
               <img
                 src="assets/images-ai/download%20(1).jpg"
@@ -713,10 +713,10 @@
                   /></svg
               ></span>
             </div>
-          </a>
+          </a> -->
 
           <!-- Card 4: Cyber Security -->
-          <a href="services.html" class="expertise-card" data-reveal="right">
+          <a href="services.html" class="expertise-card" data-reveal="left">
             <div class="expertise-card-image-wrap">
               <img
                 src="assets/images-ai/download%20(2).jpg"
@@ -755,11 +755,7 @@
           </a>
 
           <!-- Card 5: Engineering & Consulting -->
-          <a
-            href="services.html"
-            class="expertise-card expertise-card--centered"
-            data-reveal="left"
-          >
+          <a href="services.html" class="expertise-card" data-reveal="right">
             <div class="expertise-card-image-wrap">
               <img
                 src="assets/images-ai/La%20inteligencia%20Artificial%20(IA)%20en%20la%20moda%20%C2%BB%E3%80%90Blogdemoda_es%E3%80%91.jpg"
@@ -774,7 +770,7 @@
                 <span class="expertise-tag">Industrial Design</span>
                 <span class="expertise-tag">Prototyping</span>
               </div>
-              <h3 class="expertise-card-title">Engineering &amp; Consulting</h3>
+              <h3 class="expertise-card-title">Engineering</h3>
               <p class="expertise-card-desc">
                 Industrial design, mechanical engineering, prototyping, and
                 design automation — concepts to production-ready solutions.
@@ -1169,7 +1165,7 @@
               Building AI-native enterprise products and scalable software
               solutions for the modern era.
             </p>
-            <a href="contact-us.html" class="pcg-footer-cta"
+            <!-- <a href="contact-us.html" class="pcg-footer-cta"
               >Get Started
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1181,28 +1177,31 @@
                   d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
                   clip-rule="evenodd"
                 /></svg
-            ></a>
+            ></a> -->
           </div>
           <!-- Company -->
           <div class="pcg-footer-col">
             <h4 class="pcg-footer-col-title">Company</h4>
-            <a href="about-us.html">About Us</a>
-            <a href="services.html">Services</a>
             <a href="work.html">Products</a>
-            <a href="pricing.html">Industries</a>
+            <a href="services.html">Services</a>
+            <a href="about-us.html">About Us</a>
+            <!-- <a href="pricing.html">Industries</a>
             <a href="blog.html">Blog</a>
-            <a href="contact-us.html">Contact</a>
+            <a href="contact-us.html">Contact</a> -->
           </div>
           <!-- Services -->
           <div class="pcg-footer-col">
             <h4 class="pcg-footer-col-title">Services</h4>
-            <a href="service-artificial-intelligence.html">Artificial Intelligence</a>
-            <a href="services/software-engineering.html">Software Engineering</a>
-            <a href="service-product-design.html">Product Design &amp; Management</a>
-            <a href="service-mortgage.html">Mortgage Services</a>
+            <a href="service-artificial-intelligence.html"
+              >Artificial Intelligence</a
+            >
+            <a href="services/software-engineering.html"
+              >Software Engineering</a
+            >
             <a href="services/cyber-security.html">Cyber Security</a>
-            <a href="services/engineering.html">Engineering &amp; Consulting</a>
-            <a href="service-no-code-development.html">No-Code Development</a>
+            <!-- <a href="service-mortgage.html">Mortgage Services</a> -->
+            <a href="services/engineering.html">Engineering</a>
+            <!-- <a href="service-no-code-development.html">No-Code Development</a> -->
           </div>
           <!-- Products -->
           <div class="pcg-footer-col">
@@ -1301,13 +1300,17 @@
         hamburger.addEventListener("click", function () {
           hamburger.classList.toggle("active");
           navMenu.classList.toggle("active");
+          document.body.style.overflow = navMenu.classList.contains("active")
+            ? "hidden"
+            : "";
         });
 
-        // Close mobile menu when clicking on the close button
+        // Close mobile menu when clicking the overlay background
         navMenu.addEventListener("click", function (e) {
-          if (e.target === navMenu || e.offsetX > navMenu.offsetWidth - 55) {
+          if (e.target === navMenu) {
             hamburger.classList.remove("active");
             navMenu.classList.remove("active");
+            document.body.style.overflow = "";
           }
         });
 
@@ -1317,6 +1320,7 @@
           link.addEventListener("click", function () {
             hamburger.classList.remove("active");
             navMenu.classList.remove("active");
+            document.body.style.overflow = "";
           });
         });
 
@@ -1325,6 +1329,7 @@
           if (e.key === "Escape" && navMenu.classList.contains("active")) {
             hamburger.classList.remove("active");
             navMenu.classList.remove("active");
+            document.body.style.overflow = "";
           }
         });
       })();

@@ -987,7 +987,7 @@
         <img src="images/pcg-logo1.avif" loading="lazy" width="90" height="50" alt="PCG Logo" class="logo-img" style="width:150px;height:auto;" />
       </a>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="#">Piazza</a></li>
+        <li><a href="index.html">Piazza</a></li>
         <li><a href="work.html">Products</a></li>
         <li><a href="services.html">Services</a></li>
         <!-- <li><a href="about-us.html">About Us</a></li> -->
@@ -1387,6 +1387,15 @@ Mallory continuously validates user data against dynamic rules, ensuring accurac
       hamburger.addEventListener('click', function () {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      navMenu.addEventListener('click', function (e) {
+        if (e.target === navMenu) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
       });
 
       var navLinks = document.querySelectorAll('.nav-menu a');
@@ -1394,7 +1403,16 @@ Mallory continuously validates user data against dynamic rules, ensuring accurac
         link.addEventListener('click', function () {
           hamburger.classList.remove('active');
           navMenu.classList.remove('active');
+          document.body.style.overflow = '';
         });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
       });
     })();
 

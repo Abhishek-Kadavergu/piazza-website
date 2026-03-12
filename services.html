@@ -960,7 +960,7 @@
         <img src="images/pcg-logo1.avif" loading="lazy" width="150" height="50" alt="PCG Logo" class="logo-img" style="width:150px;height:auto;" />
       </a>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="#">Piazza</a></li>
+        <li><a href="index.html">Piazza</a></li>
         <li><a href="work.html">Products</a></li>
         <li><a href="services.html">Services</a></li>
         <!-- <li><a href="about-us.html">About Us</a></li> -->
@@ -1441,7 +1441,7 @@
       </div>
     </div>
   </section> -->
-  <section class="section overflow-hidden">
+  <!-- <section class="section overflow-hidden">
     <div class="w-layout-blockcontainer container w-container">
       <div class="common-heading-div text-center">
         <div data-w-id="d43cc166-6d68-e435-3baf-d7bdeefcae9d" class="sub-heading-div"><img src="images/star.svg" loading="lazy" alt="" class="sub-heading-icon">
@@ -1592,7 +1592,7 @@ border-radius: 100px !important;
         <div class="slider-left-overlay right"></div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- <section class="section">
     <div class="w-layout-blockcontainer container w-container">
       <div class="common-heading-div text-center">
@@ -2170,6 +2170,15 @@ border-radius: 100px !important;
       hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      navMenu.addEventListener('click', function(e) {
+        if (e.target === navMenu) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
       });
 
       var navLinks = document.querySelectorAll('.nav-menu a');
@@ -2177,7 +2186,16 @@ border-radius: 100px !important;
         link.addEventListener('click', function() {
           hamburger.classList.remove('active');
           navMenu.classList.remove('active');
+          document.body.style.overflow = '';
         });
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
       });
     })();
 
