@@ -770,14 +770,14 @@ html, body, .body {
 }
 
 .common-button.outline-button {
-  border-color: #e0e0e0;
-  color: var(--color--black);
+  border-color: var(--color--green-900);
+  color: var(--color--green-900);
   background-color: #0000;
 }
 
 .common-button.outline-button:hover {
-  background-color: var(--color--white);
-  color: var(--color--gray-600);
+  background-color: var(--color--green-600);
+  color: var(--color--white);
 }
 
 .common-button.contact-button {

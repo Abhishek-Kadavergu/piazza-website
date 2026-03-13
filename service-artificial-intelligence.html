@@ -496,27 +496,6 @@
           <h2 class="h2-heading ai-showcase-heading">Transforming Business with Intelligent Automation</h2>
           <p class="paragraph ai-showcase-text">Our AI-powered solutions go beyond simple automation. We build systems that learn, adapt, and evolve with your business — from processing thousands of documents in minutes to providing 24/7 intelligent customer support through advanced conversational AI.</p>
           <div class="ai-showcase-features">
-            <div class="ai-feature-item ai-reveal ai-reveal-up">
-              <div class="ai-feature-icon"><i class="fas fa-comments"></i></div>
-              <div class="ai-feature-text">
-                <strong>Conversational AI</strong>
-                <p>Deploy intelligent chatbots that understand context, handle complex queries, and provide human-like interactions across multiple channels.</p>
-              </div>
-            </div>
-            <div class="ai-feature-item ai-reveal ai-reveal-up">
-              <div class="ai-feature-icon"><i class="fas fa-file-alt"></i></div>
-              <div class="ai-feature-text">
-                <strong>Document AI</strong>
-                <p>Extract, classify, and process documents at scale with intelligent OCR that handles invoices, contracts, forms, and unstructured data.</p>
-              </div>
-            </div>
-            <div class="ai-feature-item ai-reveal ai-reveal-up">
-              <div class="ai-feature-icon"><i class="fas fa-brain"></i></div>
-              <div class="ai-feature-text">
-                <strong>Predictive Intelligence</strong>
-                <p>Leverage machine learning models to forecast trends, detect anomalies, and make data-driven decisions that keep you ahead of the curve.</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -609,7 +588,7 @@
   </section>
   <section data-wf--footer--variant="base" class="footer">
     <div class="w-layout-blockcontainer container w-container">
-      <div class="footer-detail-div">
+      <!-- <div class="footer-detail-div">
         <div class="footer-link-div">
           <a href="https://www.instagram.com/" target="_blank" class="paragraph footer-text-link">Instagram</a>
           <a href="https://www.facebook.com/" target="_blank" class="paragraph footer-text-link">Facebook</a>
@@ -629,7 +608,7 @@
           <a href="templates/changelog.html" class="paragraph footer-text-link">Changelog</a>
           <a href="templates/styleguide.html" class="paragraph footer-text-link">Style guide</a>
         </div>
-      </div>
+      </div> -->
       <div class="footer-line-div"></div>
       <div class="footer-bottom-div">
         <div class="footer-detail-div">
@@ -717,8 +696,9 @@
     .ai-showcase-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 80px;
       align-items: center;
+      justify-items: stretch;
     }
     .ai-showcase-image-wrapper {
       position: relative;
@@ -766,15 +746,17 @@
     .ai-showcase-heading {
       margin-bottom: 16px;
     }
-    .ai-showcase-text {
-      margin-bottom: 32px;
-      color: #555;
-      line-height: 1.8;
-    }
-    .ai-showcase-features {
+    .ai-showcase-content-col {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      justify-content: center;
+      height: 100%;
+    }
+    .ai-showcase-text {
+      margin-bottom: 40px;
+      color: #555;
+      line-height: 1.8;
+      font-size: 17px;
     }
     .ai-feature-item {
       display: flex;
@@ -986,21 +968,24 @@
     /* --- AI CTA Section --- */
     .ai-cta-section {
       padding: 120px 0;
-      background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+      background: linear-gradient(135deg, #004643 0%, #00897b 100%);
       position: relative;
       overflow: hidden;
       text-align: center;
+      margin-top: 80px;
+      border-radius: 24px 24px 0 0;
+      box-shadow: 0 -8px 32px rgba(0, 70, 67, 0.1);
     }
     .ai-cta-shape {
       position: absolute;
       border-radius: 50%;
-      opacity: 0;
+      opacity: 0.6;
       pointer-events: none;
     }
     .ai-cta-shape-1 {
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(0, 70, 67, 0.3) 0%, transparent 60%);
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
       top: -200px;
       left: -150px;
       animation: aiCtaFloat1 8s ease-in-out infinite;
@@ -1008,7 +993,7 @@
     .ai-cta-shape-2 {
       width: 400px;
       height: 400px;
-      background: radial-gradient(circle, rgba(0, 137, 123, 0.2) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
       bottom: -150px;
       right: -100px;
       animation: aiCtaFloat2 10s ease-in-out 1s infinite;
@@ -1016,65 +1001,86 @@
     .ai-cta-shape-3 {
       width: 300px;
       height: 300px;
-      background: radial-gradient(circle, rgba(0, 102, 95, 0.15) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 60%);
       top: 50%;
       left: 60%;
       animation: aiCtaFloat3 12s ease-in-out 2s infinite;
     }
     .ai-cta-content {
       position: relative;
-      z-index: 1;
-      max-width: 650px;
+      z-index: 10;
+      max-width: 800px;
       margin: 0 auto;
+      padding: 0 20px;
     }
     .ai-cta-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 18px;
+      padding: 10px 20px;
       border-radius: 50px;
-      background: rgba(0, 137, 123, 0.15);
-      border: 1px solid rgba(0, 137, 123, 0.25);
-      color: #00897b;
+      background: rgba(0, 70, 67, 0.08);
+      border: 1px solid rgba(0, 70, 67, 0.15);
+      color: #004643;
       font-size: 14px;
       font-weight: 600;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     }
     .ai-cta-badge i {
       color: #00897b;
+      font-size: 16px;
     }
     .ai-cta-heading {
-      color: #fff !important;
-      margin-bottom: 16px;
+      color: #004643 !important;
+      margin-bottom: 24px;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.2;
+      text-shadow: none;
     }
     .ai-cta-text {
-      color: rgba(255, 255, 255, 0.7) !important;
-      margin-bottom: 40px;
+      color: #1a1a1a !important;
+      margin-bottom: 48px;
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .ai-cta-buttons {
       display: flex;
-      gap: 16px;
+      gap: 20px;
       justify-content: center;
       flex-wrap: wrap;
     }
     .ai-cta-btn-primary {
-      background-color: #00897b !important;
-      border-color: #00897b !important;
+      background-color: #fff !important;
+      border-color: #fff !important;
+      color: #004643 !important;
       transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 50px;
     }
     .ai-cta-btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0, 137, 123, 0.4) !important;
+      box-shadow: 0 12px 32px rgba(255, 255, 255, 0.3) !important;
     }
     .ai-cta-btn-secondary {
       color: #fff !important;
-      border-color: rgba(255, 255, 255, 0.3) !important;
+      border-color: rgba(255, 255, 255, 0.5) !important;
+      background: transparent !important;
       transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease !important;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 50px;
     }
     .ai-cta-btn-secondary:hover {
       transform: translateY(-3px);
-      border-color: #00897b !important;
-      background: rgba(0, 137, 123, 0.1) !important;
+      border-color: #fff !important;
+      background: rgba(255, 255, 255, 0.1) !important;
     }
 
     /* --- Keyframe Animations --- */
@@ -1115,7 +1121,12 @@
     @media screen and (max-width: 991px) {
       .ai-showcase-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 50px;
+        align-items: center;
+      }
+      .ai-showcase-image-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
       }
       .ai-stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1125,9 +1136,11 @@
       }
     }
     @media screen and (max-width: 767px) {
-      .ai-showcase-section,
-      .ai-usecases-section {
-        padding: 60px 0;
+      .ai-showcase-section {
+        padding: 80px 0;
+      }
+      .ai-showcase-grid {
+        gap: 40px;
       }
       .ai-stats-section {
         padding: 50px 0;

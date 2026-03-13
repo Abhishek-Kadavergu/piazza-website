@@ -501,6 +501,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-height: 0; /* Prevent flex items from overflowing */
 }
 
 .ai-card-title {
@@ -510,6 +511,8 @@
   color: #1a1a1a;
   margin-bottom: 8px;
   line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .ai-card-description {
@@ -518,6 +521,15 @@
   line-height: 1.7;
   margin-bottom: 20px;
   flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 5.6em; /* Fallback for browsers that don't support line-clamp */
 }
 
 /* --- Card Arrow --- */
@@ -596,15 +608,65 @@
 
 /* --- Responsive Breakpoints --- */
 
+/* Large Desktop: 3 columns */
+@media screen and (min-width: 1200px) {
+  .ai-cards-grid {
+    gap: 32px;
+  }
+  
+  .ai-card-content {
+    padding: 32px 28px;
+  }
+  
+  .ai-card-title {
+    font-size: 22px;
+  }
+  
+  .ai-card-description {
+    font-size: 15px;
+  }
+}
+
+/* Desktop: 3 columns */
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .ai-cards-grid {
+    gap: 28px;
+  }
+}
+
 /* Tablet: 2 columns */
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 991px) and (min-width: 768px) {
   .ai-cards-section {
     padding: 80px 0;
+  }
+
+  .ai-cards-header {
+    margin-bottom: 50px;
   }
 
   .ai-cards-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+  }
+  
+  .ai-card-visual {
+    height: 200px;
+    padding: 20px;
+  }
+
+  .ai-card-content {
+    padding: 24px 20px;
+  }
+  
+  .ai-card-title {
+    font-size: 18px;
+  }
+  
+  .ai-card-description {
+    font-size: 13px;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    max-height: 3.9em; /* 3 lines * 1.3 line-height */
   }
 }
 
@@ -624,35 +686,115 @@
   }
 
   .ai-card-visual {
-    height: 200px;
-    padding: 20px;
-  }
-
-  .ai-card-content {
-    padding: 24px 20px;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .ai-cards-title {
-    font-size: 28px;
-  }
-
-  .ai-cards-subtitle {
-    font-size: 15px;
-  }
-
-  .ai-card-visual {
     height: 180px;
     padding: 16px;
   }
 
-  .mock-flow {
+  .ai-card-content {
+    padding: 20px 16px;
+  }
+  
+  .ai-card-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  
+  .ai-card-description {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    max-height: 4.8em; /* 3 lines * 1.6 line-height */
+  }
+  
+  .ai-card-arrow {
+    font-size: 13px;
+    gap: 6px;
+  }
+  
+  .ai-card-arrow-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}
+
+/* Small Mobile: 1 column with tighter spacing */
+@media screen and (max-width: 479px) {
+  .ai-cards-section {
+    padding: 50px 0;
+  }
+
+  .ai-cards-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .ai-cards-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .ai-cards-grid {
+    gap: 16px;
+  }
+
+  .ai-card-visual {
+    height: 160px;
+    padding: 12px;
+  }
+
+  .ai-card-content {
+    padding: 16px 12px;
+  }
+  
+  .ai-card-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  
+  .ai-card-description {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    max-height: 3em; /* 2 lines * 1.5 line-height */
+  }
+  
+  .ai-card-arrow {
+    font-size: 12px;
     gap: 4px;
+  }
+  
+  .ai-card-arrow-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+  }
+  
+  /* Fix mock elements for small screens */
+  .mock-flow {
+    gap: 2px;
   }
 
   .mock-flow-node {
-    padding: 6px 10px;
+    padding: 4px 6px;
+    font-size: 9px;
+  }
+  
+  .mock-chat-bubble {
     font-size: 10px;
+    padding: 6px 10px;
+  }
+  
+  .mock-doc-field {
+    font-size: 10px;
+  }
+  
+  .mock-widget-msg {
+    font-size: 10px;
+    padding: 6px 10px;
   }
 }
