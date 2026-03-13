@@ -1967,10 +1967,20 @@ video::-webkit-media-controls {
   transform: translateX(0);
 }
 
-/* First card image positioning */
+/* First card image positioning - removed excessive transform for consistent hover behavior */
 .expertise-card[data-reveal="left"] .expertise-card-image-wrap img {
-  transform: translateY(-50px);
   object-position: center top;
+}
+
+/* Engineering card image positioning - move image up */
+.expertise-card[data-reveal="right"] .expertise-card-image-wrap img {
+  transform: translateY(-30px);
+  object-position: center top;
+}
+
+/* Fix Engineering card hover effect to account for initial positioning */
+.expertise-card[data-reveal="right"].is-visible:hover .expertise-card-image-wrap img {
+  transform: translateY(-30px) scale(1.05);
 }
 
 /* Premium Service Detail Hero Image */
