@@ -94,6 +94,7 @@
       border-radius: 28px !important;
       border: 1px solid rgba(0,70,67,0.07);
       box-shadow: 0 4px 24px rgba(0,70,67,0.06);
+      grid-column-gap: 0 !important;
       max-width: 75%;
       margin-left: auto;
       margin-right: auto;
@@ -178,6 +179,46 @@
     /* --- Service Image (smoother corners) --- */
     .service-image {
       border-radius: 0 28px 28px 0;
+    }
+
+    /* AI card image is a padded PNG; scale/crop it to match other cards */
+    .service-grid._01 .service-image-div {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+    }
+
+    .service-grid._01 .service-image-div::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 84px;
+      background: linear-gradient(90deg, rgba(241,247,246,0.75) 0%, rgba(241,247,246,0) 100%);
+      filter: blur(4px);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .service-grid._01 .service-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100% !important;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.18);
+      transform-origin: center;
+    }
+
+    .service-grid._01 .service-left-blur-div {
+      left: -1px;
+      width: 230px;
+      background-image: linear-gradient(90deg, rgba(241,247,246,0.98) 0%, rgba(241,247,246,0.86) 28%, rgba(241,247,246,0.56) 54%, rgba(241,247,246,0.26) 74%, rgba(241,247,246,0.08) 88%, rgba(241,247,246,0) 100%) !important;
+      filter: blur(1.5px);
     }
 
     /* --- Service Arrow Button (green) --- */
@@ -1021,7 +1062,7 @@
             </div>
           </div>
           <div class="service-div">
-            <div class="service-image-div"><img src="images/service1_1service1.webp" loading="lazy" alt="Service Image" class="service-image">
+            <div class="service-image-div"><img src="assets/service-cards/artificial-intelligence.png" loading="lazy" alt="Artificial Intelligence Service" class="service-image">
               <div class="service-left-blur-div"></div>
               <div class="service-info-div">
                 <div class="service-icon-div">
@@ -1049,7 +1090,7 @@
             </div>
           </div>
           <div class="service-div">
-            <div class="service-image-div"><img src="images/service2_1service2.webp" loading="lazy" alt="Service Image" class="service-image">
+            <div class="service-image-div"><img src="assets/service-cards/software.png" loading="lazy" alt="Software Engineering Service" class="service-image">
               <div class="service-left-blur-div"></div>
               <div class="service-info-div">
                 <div class="service-icon-div">
@@ -1147,7 +1188,7 @@
             </div>
           </div>
           <div class="service-div">
-            <div class="service-image-div"><img src="images/service5_1service5.webp" loading="lazy" alt="Service Image" class="service-image">
+            <div class="service-image-div"><img src="assets/service-cards/cyber.png" loading="lazy" alt="Cyber Security Service" class="service-image">
               <div class="service-left-blur-div"></div>
               <div class="service-info-div">
                 <div class="service-icon-div">
@@ -1176,7 +1217,7 @@
             </div>
           </div>
           <div class="service-div">
-            <div class="service-image-div"><img src="images/service6_1service6.webp" loading="lazy" alt="Service Image" class="service-image">
+            <div class="service-image-div"><img src="assets/service-cards/engineering.png" loading="lazy" alt="Service Image" class="service-image">
               <div class="service-left-blur-div"></div>
               <div class="service-info-div">
                 <div class="service-icon-div">
