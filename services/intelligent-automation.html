@@ -18,30 +18,191 @@
     <link href="../css/ptcg.webflow.css" rel="stylesheet" type="text/css" />
     <link href="../css/hero-redesign.css" rel="stylesheet" type="text/css" />
     <style>
-      /* Fix navbar spacing issue */
+      /* Enhanced hero section with better colors */
       .service-detail-hero-section {
         padding-top: 40px !important;
         padding-bottom: 80px !important;
+        background: linear-gradient(
+          135deg,
+          #f8faf9 0%,
+          #f0ede5 50%,
+          #e8f5e8 100%
+        ) !important;
+        position: relative;
+        overflow: hidden;
       }
-      
+
+      /* Add subtle gradient overlay for depth */
+      .service-detail-hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(0, 70, 67, 0.03) 0%,
+          rgba(0, 137, 123, 0.05) 50%,
+          rgba(0, 70, 67, 0.02) 100%
+        );
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Clean hero text styling with better colors */
+      .service-detail-hero-section .h1-heading {
+        color: #004643 !important;
+        font-family: "Space Grotesk", sans-serif !important;
+        font-size: 48px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        margin: 0 auto 24px !important;
+        max-width: 800px !important;
+        position: relative !important;
+        z-index: 3 !important;
+        text-shadow: 0 2px 4px rgba(0, 70, 67, 0.1) !important;
+      }
+
+      .service-detail-hero-section .service-detail-hero-paragraph {
+        color: #374151 !important;
+        font-family: "Inter", sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        z-index: 3 !important;
+        background: rgba(255, 255, 255, 0.7) !important;
+        padding: 20px 24px !important;
+        border-radius: 12px !important;
+        backdrop-filter: blur(10px) !important;
+        border: 1px solid rgba(0, 70, 67, 0.1) !important;
+        box-shadow: 0 4px 20px rgba(0, 70, 67, 0.08) !important;
+      }
+
+      /* Fix background image with better blend */
+      .service-detail-hero-section .hero-background-image {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        opacity: 0.08 !important;
+        z-index: 0 !important;
+        mix-blend-mode: multiply !important;
+      }
+
+      /* Add decorative green accent */
+      .service-detail-hero-section::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 137, 123, 0.15) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        filter: blur(80px);
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      /* Ensure content stays above background */
+      .service-detail-hero-section .container,
+      .service-detail-hero-section .w-container,
+      .service-detail-hero-section .w-layout-blockcontainer {
+        position: relative !important;
+        z-index: 3 !important;
+      }
+
+      /* Enhanced button styling */
+      .service-detail-hero-section .common-button {
+        background: linear-gradient(
+          135deg,
+          #004643 0%,
+          #00897b 100%
+        ) !important;
+        color: #ffffff !important;
+        border: none !important;
+        padding: 14px 28px !important;
+        font-weight: 600 !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 12px rgba(0, 70, 67, 0.2) !important;
+      }
+
+      .service-detail-hero-section .common-button:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 20px rgba(0, 70, 67, 0.3) !important;
+      }
+
+      .service-detail-hero-section .outline-button {
+        background: transparent !important;
+        color: #004643 !important;
+        border: 2px solid #004643 !important;
+        padding: 12px 26px !important;
+        font-weight: 600 !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+      }
+
+      .service-detail-hero-section .outline-button:hover {
+        background: #004643 !important;
+        color: #ffffff !important;
+        transform: translateY(-2px) !important;
+      }
+
       @media screen and (max-width: 991px) {
         .service-detail-hero-section {
           padding-top: 30px !important;
           padding-bottom: 60px !important;
         }
+
+        .service-detail-hero-section .h1-heading {
+          font-size: 40px !important;
+        }
+
+        .service-detail-hero-section .service-detail-hero-paragraph {
+          font-size: 16px !important;
+        }
       }
-      
+
       @media screen and (max-width: 767px) {
         .service-detail-hero-section {
           padding-top: 20px !important;
           padding-bottom: 50px !important;
         }
+
+        .service-detail-hero-section .h1-heading {
+          font-size: 36px !important;
+        }
+
+        .service-detail-hero-section .service-detail-hero-paragraph {
+          font-size: 15px !important;
+        }
       }
-      
+
       @media screen and (max-width: 479px) {
         .service-detail-hero-section {
           padding-top: 15px !important;
           padding-bottom: 40px !important;
+        }
+
+        .service-detail-hero-section .h1-heading {
+          font-size: 32px !important;
+        }
+
+        .service-detail-hero-section .service-detail-hero-paragraph {
+          font-size: 14px !important;
         }
       }
     </style>
@@ -94,7 +255,7 @@
     </nav>
 
     <!-- Spacer to prevent content from going under navbar -->
-    <div style="height: 100px; width: 100%;"></div>
+    <div style="height: 100px; width: 100%"></div>
 
     <section class="service-detail-hero-section">
       <img
@@ -109,7 +270,9 @@
             <div class="common-heading-div">
               <h1 class="h1-heading">Intelligent Automation</h1>
               <p class="large-paragraph service-detail-hero-paragraph">
-                Combine AI with robotic process automation to streamline complex business processes, reduce manual effort, and accelerate operational efficiency at enterprise scale.
+                Combine AI with robotic process automation to streamline complex
+                business processes, reduce manual effort, and accelerate
+                operational efficiency at enterprise scale.
               </p>
             </div>
             <div class="service-detail-hero-button-div">
@@ -837,7 +1000,7 @@
     </section>
 
     <!-- CTA / Newsletter Section -->
-    <section class="section newsletter-section">
+    <!-- <section class="section newsletter-section">
       <div class="w-layout-blockcontainer container w-container">
         <div class="newsletter-heading-div">
           <div class="ai-reveal hero-sub-heading-div">
@@ -869,7 +1032,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <section class="footer">
@@ -881,7 +1044,7 @@
                 src="../images/pcg-logo1.avif"
                 loading="lazy"
                 width="90"
-                height="60"
+                height="40"
                 alt="Logo"
                 class="footer-logo"
             /></a>
