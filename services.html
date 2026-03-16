@@ -134,12 +134,66 @@
         top: 100px;
       }
     }
+    @media (max-width: 767px) {
+      .service-grid {
+        height: auto;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+      }
+
+      .service-image-div {
+        height: clamp(190px, 52vw, 280px);
+        min-height: 190px;
+      }
+
+      .service-image {
+        width: 100%;
+        height: 100% !important;
+        object-fit: cover;
+        border-radius: 0 0 20px 20px;
+      }
+
+      /* Reset AI desktop-only crop/offset behavior on mobile */
+      .service-grid._01 .service-image-div {
+        height: clamp(190px, 52vw, 280px);
+        min-height: 190px;
+      }
+
+      .service-grid._01 .service-image-div::before {
+        display: none;
+      }
+
+      .service-grid._01 .service-image {
+        position: relative;
+        inset: auto;
+        object-position: center 55%;
+        transform: none;
+      }
+    }
+
     @media (max-width: 480px) {
       .service-grid.stack-card {
         position: static;
       }
       .service-grid {
         max-width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+      }
+      .service-image-div {
+        height: clamp(170px, 58vw, 230px);
+        min-height: 170px;
+      }
+      .service-image {
+        border-radius: 0 0 12px 12px;
+      }
+      .service-grid._01 .service-image-div {
+        height: clamp(170px, 58vw, 230px);
+        min-height: 170px;
+      }
+      .service-grid._01 .service-image {
+        object-position: center 58%;
       }
       .sticky-scroll-spacer {
         display: none;
@@ -186,32 +240,24 @@
       position: relative;
       overflow: hidden;
       width: 100%;
-      height: 100%;
-      min-height: 100%;
+      height: auto;
+      min-height: 0;
     }
 
     .service-grid._01 .service-image-div::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 84px;
-      background: linear-gradient(90deg, rgba(241,247,246,0.75) 0%, rgba(241,247,246,0) 100%);
-      filter: blur(4px);
-      pointer-events: none;
-      z-index: 2;
+      display: none;
     }
 
     .service-grid._01 .service-image {
-      position: absolute;
-      inset: 0;
+      position: relative;
+      inset: auto;
       width: 100%;
-      height: 100% !important;
+      height: 380px !important;
       object-fit: cover;
-      object-position: center 40%;
-      transform: scale(1.18);
+      object-position: center 62%;
+      transform: none;
       transform-origin: center;
+      display: block;
     }
 
     .service-grid._01 .service-left-blur-div {
