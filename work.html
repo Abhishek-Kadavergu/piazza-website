@@ -427,14 +427,26 @@
       }
 
       .d360-labels-row {
-        position: static;
+        position: sticky;
+        top: 76px;
+        z-index: 30;
         justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
         gap: 10px;
         margin: 4px 0 20px;
-        padding: 0;
+        padding: 0 0 14px;
+        background: linear-gradient(180deg, rgba(240, 237, 229, 0.96) 0%, rgba(240, 237, 229, 0.92) 68%, rgba(240, 237, 229, 0) 100%);
+      }
+
+      .d360-labels-row::-webkit-scrollbar {
+        display: none;
       }
 
       .d360-label-chip {
+        flex: 0 0 auto;
         font-size: 14px;
         padding: 10px 16px;
       }
