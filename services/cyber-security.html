@@ -106,12 +106,35 @@
         align-items: center !important;
       }
 
+      .service-detail-hero-image-div::before {
+        content: "";
+        position: absolute;
+        width: min(82%, 420px);
+        height: 78%;
+        border-radius: 20px;
+        background: radial-gradient(
+          circle at 50% 45%,
+          rgba(0, 116, 107, 0.24) 0%,
+          rgba(0, 70, 67, 0.12) 45%,
+          rgba(0, 70, 67, 0) 72%
+        );
+        filter: blur(18px);
+        transform: translateY(22px);
+        z-index: 1;
+        pointer-events: none;
+      }
+
       .service-detail-hero-image {
         width: 100% !important;
         max-width: 500px !important;
         height: auto !important;
         border-radius: 16px !important;
-        box-shadow: 0 20px 60px rgba(0, 70, 67, 0.15) !important;
+        box-shadow:
+          0 30px 70px rgba(0, 70, 67, 0.2),
+          0 12px 28px rgba(0, 0, 0, 0.12),
+          0 2px 0 rgba(255, 255, 255, 0.42) inset !important;
+        border: 1px solid rgba(0, 70, 67, 0.12) !important;
+        object-position: center 38% !important;
         position: relative !important;
         z-index: 3 !important;
       }
@@ -384,6 +407,7 @@
           height: auto !important;
           max-height: 350px !important;
           object-fit: contain !important;
+          object-position: center 35% !important;
         }
 
         .svc-cards-section {
@@ -459,6 +483,7 @@
           height: auto !important;
           max-height: 300px !important;
           object-fit: contain !important;
+          object-position: center 34% !important;
         }
 
         .svc-cards-section {
@@ -736,7 +761,7 @@
           <div class="service-detail-hero-div">
             <div class="service-detail-hero-image-div">
               <img
-                src="../images/service1_1service1.webp"
+                src="../assets/images-ai/download1.jpg"
                 loading="lazy"
                 alt="Cyber Security Services"
                 class="service-detail-hero-image"
@@ -1418,7 +1443,7 @@
             var scrolled = window.scrollY;
             if (scrolled < 800) {
               heroImage.style.transform =
-                "translateY(" + scrolled * 0.08 + "px)";
+                "translateY(" + (-12 + scrolled * 0.08) + "px)";
             }
           });
         }
