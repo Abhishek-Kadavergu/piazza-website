@@ -2140,7 +2140,38 @@
 
     @media (min-width: 1024px) {
       .team-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+      }
+
+      .team-grid > .team-div {
+        grid-column: span 3;
+      }
+
+      /* Center a final row of 3 cards within the 4-card desktop rhythm */
+      .team-grid > .team-div:nth-child(4n + 1):nth-last-child(3) {
+        grid-column: 2 / span 3;
+      }
+
+      .team-grid > .team-div:nth-child(4n + 2):nth-last-child(2) {
+        grid-column: 5 / span 3;
+      }
+
+      .team-grid > .team-div:nth-child(4n + 3):nth-last-child(1) {
+        grid-column: 8 / span 3;
+      }
+
+      /* Center a final row of 2 cards */
+      .team-grid > .team-div:nth-child(4n + 1):nth-last-child(2) {
+        grid-column: 4 / span 3;
+      }
+
+      .team-grid > .team-div:nth-child(4n + 2):nth-last-child(1) {
+        grid-column: 7 / span 3;
+      }
+
+      /* Center a final row of 1 card */
+      .team-grid > .team-div:nth-child(4n + 1):nth-last-child(1) {
+        grid-column: 5 / span 4;
       }
     }
   </style>

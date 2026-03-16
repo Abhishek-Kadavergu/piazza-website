@@ -225,32 +225,22 @@ kw .navbar .logo-img {
 
 /* ===== HACKATHON SECTION — LIGHT GREEN TINT ===== */
 .hackathon-section {
-  background-color: rgba(0, 70, 67, 0.14);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 70, 67, 0.16) 0%,
+    rgba(0, 70, 67, 0.11) 58%,
+    rgba(255, 255, 255, 0) 100%
+  );
   position: relative;
   overflow: hidden;
   border-top: none;
+  margin-bottom: -1px;
 }
 .hackathon-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 180px;
-  background: linear-gradient(180deg, #e2ece9 0%, rgba(226, 236, 233, 0) 100%);
-  z-index: 1;
-  pointer-events: none;
+  content: none;
 }
 .hackathon-section::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 180px;
-  background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
-  z-index: 1;
-  pointer-events: none;
+  content: none;
 }
 .hackathon-section .sub-heading-div {
   border-color: rgba(0, 70, 67, 0.15) !important;
@@ -1381,16 +1371,16 @@ video::-webkit-media-controls {
   .products-hero {
     padding: 140px 0 80px;
   }
-  
+
   .products-hero-inner {
     padding: 0 24px;
   }
-  
+
   .products-hero-heading {
     font-size: 42px;
     line-height: 1.15;
   }
-  
+
   .products-hero-sub {
     font-size: 16px;
     line-height: 1.6;
@@ -1402,21 +1392,21 @@ video::-webkit-media-controls {
   .products-hero {
     padding: 120px 0 60px;
   }
-  
+
   .products-hero-inner {
     padding: 0 20px;
   }
-  
+
   .products-hero-heading {
     font-size: 36px;
     line-height: 1.2;
   }
-  
+
   .products-hero-sub {
     font-size: 15px;
     margin: 0 auto 24px;
   }
-  
+
   .products-hero-badge {
     font-size: 11px;
     padding: 6px 16px;
@@ -1428,21 +1418,21 @@ video::-webkit-media-controls {
   .products-hero {
     padding: 100px 0 50px;
   }
-  
+
   .products-hero-inner {
     padding: 0 16px;
   }
-  
+
   .products-hero-heading {
     font-size: 30px;
     line-height: 1.25;
   }
-  
+
   .products-hero-sub {
     font-size: 14px;
     margin: 0 auto 20px;
   }
-  
+
   .products-hero-badge {
     font-size: 10px;
     padding: 5px 14px;
@@ -1454,22 +1444,22 @@ video::-webkit-media-controls {
   .products-hero {
     padding: 80px 0 40px;
   }
-  
+
   .products-hero-inner {
     padding: 0 12px;
   }
-  
+
   .products-hero-heading {
     font-size: 26px;
     line-height: 1.3;
   }
-  
+
   .products-hero-sub {
     font-size: 13px;
     margin: 0 auto 16px;
     line-height: 1.7;
   }
-  
+
   .products-hero-badge {
     font-size: 9px;
     padding: 4px 12px;
@@ -1482,38 +1472,40 @@ video::-webkit-media-controls {
   .products-service-wrapper {
     padding: 0 24px;
   }
-  
+
   .service-grid._01,
   .service-grid._02 {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  
+
   .service-div {
     margin-bottom: 0;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
-  
+
   .service-div:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 32px rgba(0, 70, 67, 0.15);
     z-index: 10;
   }
-  
+
   .service-page-detail-div {
     padding: 24px;
   }
-  
+
   .service-heading-div .h3-heading {
     font-size: 24px;
   }
-  
+
   .service-card-paragraph {
     font-size: 15px;
     line-height: 1.6;
   }
-  
+
   .products-section-heading {
     font-size: 32px;
     margin-bottom: 24px;
@@ -1524,43 +1516,45 @@ video::-webkit-media-controls {
   .products-service-wrapper {
     padding: 0 20px;
   }
-  
+
   .service-grid._01,
   .service-grid._02 {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .service-div {
     margin-bottom: 0;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
-  
+
   .service-div:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 24px rgba(0, 70, 67, 0.15);
     z-index: 10;
   }
-  
+
   .service-page-detail-div {
     padding: 20px;
   }
-  
+
   .service-heading-div .h3-heading {
     font-size: 22px;
   }
-  
+
   .service-card-paragraph {
     font-size: 14px;
     line-height: 1.6;
   }
-  
+
   .products-section-heading {
     font-size: 28px;
     margin-bottom: 20px;
   }
-  
+
   .service-text {
     font-size: 15px;
     margin-bottom: 32px;
@@ -1571,43 +1565,45 @@ video::-webkit-media-controls {
   .products-service-wrapper {
     padding: 0 16px;
   }
-  
+
   .service-grid._01,
   .service-grid._02 {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  
+
   .service-div {
     margin-bottom: 0;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
-  
+
   .service-div:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 20px rgba(0, 70, 67, 0.15);
     z-index: 10;
   }
-  
+
   .service-page-detail-div {
     padding: 16px;
   }
-  
+
   .service-heading-div .h3-heading {
     font-size: 20px;
   }
-  
+
   .service-card-paragraph {
     font-size: 13px;
     line-height: 1.6;
   }
-  
+
   .products-section-heading {
     font-size: 24px;
     margin-bottom: 16px;
   }
-  
+
   .service-text {
     font-size: 14px;
     margin-bottom: 24px;
@@ -1618,43 +1614,45 @@ video::-webkit-media-controls {
   .products-service-wrapper {
     padding: 0 12px;
   }
-  
+
   .service-grid._01,
   .service-grid._02 {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  
+
   .service-div {
     margin-bottom: 0;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
-  
+
   .service-div:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 16px rgba(0, 70, 67, 0.15);
     z-index: 10;
   }
-  
+
   .service-page-detail-div {
     padding: 12px;
   }
-  
+
   .service-heading-div .h3-heading {
     font-size: 18px;
   }
-  
+
   .service-card-paragraph {
     font-size: 12px;
     line-height: 1.5;
   }
-  
+
   .products-section-heading {
     font-size: 20px;
     margin-bottom: 12px;
   }
-  
+
   .service-text {
     font-size: 13px;
     margin-bottom: 20px;
@@ -1666,11 +1664,11 @@ video::-webkit-media-controls {
   .newsletter-section .w-container {
     padding: 0 24px;
   }
-  
+
   .newsletter-section .h1-heading {
     font-size: clamp(32px, 4vw, 48px) !important;
   }
-  
+
   .newsletter-section .newsletter-paragraph {
     font-size: 16px;
   }
@@ -1680,15 +1678,15 @@ video::-webkit-media-controls {
   .newsletter-section .w-container {
     padding: 0 20px;
   }
-  
+
   .newsletter-section .h1-heading {
     font-size: clamp(28px, 5vw, 36px) !important;
   }
-  
+
   .newsletter-section .newsletter-paragraph {
     font-size: 15px;
   }
-  
+
   .newsletter-section .newsletter-button-div {
     flex-direction: column;
     align-items: center;
@@ -1700,15 +1698,15 @@ video::-webkit-media-controls {
   .newsletter-section .w-container {
     padding: 0 16px;
   }
-  
+
   .newsletter-section .h1-heading {
     font-size: clamp(24px, 6vw, 30px) !important;
   }
-  
+
   .newsletter-section .newsletter-paragraph {
     font-size: 14px;
   }
-  
+
   .newsletter-section .common-button {
     width: 100%;
     max-width: 280px;
@@ -1719,15 +1717,15 @@ video::-webkit-media-controls {
   .newsletter-section .w-container {
     padding: 0 12px;
   }
-  
+
   .newsletter-section .h1-heading {
     font-size: clamp(20px, 7vw, 26px) !important;
   }
-  
+
   .newsletter-section .newsletter-paragraph {
     font-size: 13px;
   }
-  
+
   .newsletter-section .common-button {
     width: 100%;
     max-width: 240px;
@@ -1979,31 +1977,32 @@ video::-webkit-media-controls {
 }
 
 /* Fix Engineering card hover effect to account for initial positioning */
-.expertise-card[data-reveal="right"].is-visible:hover .expertise-card-image-wrap img {
+.expertise-card[data-reveal="right"].is-visible:hover
+  .expertise-card-image-wrap
+  img {
   transform: translateY(-30px) scale(1.05);
 }
 
 /* Premium Service Detail Hero Image */
 .service-detail-hero-image {
   border-radius: 40px;
-  box-shadow: 
+  box-shadow:
     0 20px 50px rgba(0, 70, 67, 0.12),
     0 10px 25px rgba(0, 70, 67, 0.08),
     0 5px 12px rgba(0, 70, 67, 0.06),
     0 2px 6px rgba(0, 70, 67, 0.04);
-  transition: 
+  transition:
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  filter: 
-    drop-shadow(0 8px 20px rgba(0, 70, 67, 0.08))
+  filter: drop-shadow(0 8px 20px rgba(0, 70, 67, 0.08))
     drop-shadow(0 4px 12px rgba(0, 137, 123, 0.04));
   position: relative;
   z-index: 1;
 }
 
 .service-detail-hero-image::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -6px;
   border-radius: 46px;
@@ -2022,7 +2021,7 @@ video::-webkit-media-controls {
 }
 
 .service-detail-hero-image::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: -12px;
   border-radius: 52px;
@@ -2041,13 +2040,12 @@ video::-webkit-media-controls {
 
 .service-detail-hero-image:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 
+  box-shadow:
     0 24px 60px rgba(0, 70, 67, 0.16),
-    0 12px 30px rgba(0, 70, 67, 0.10),
+    0 12px 30px rgba(0, 70, 67, 0.1),
     0 6px 15px rgba(0, 70, 67, 0.08),
     0 3px 8px rgba(0, 70, 67, 0.06);
-  filter: 
-    drop-shadow(0 12px 30px rgba(0, 70, 67, 0.12))
+  filter: drop-shadow(0 12px 30px rgba(0, 70, 67, 0.12))
     drop-shadow(0 6px 16px rgba(0, 137, 123, 0.06));
 }
 
@@ -2077,7 +2075,7 @@ video::-webkit-media-controls {
 
 /* Blend top of hero section with navbar */
 .service-detail-hero-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -2098,7 +2096,7 @@ video::-webkit-media-controls {
 }
 
 .service-detail-hero-section::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -2136,7 +2134,7 @@ video::-webkit-media-controls {
 .service-detail-hero-section + section::before,
 .service-detail-hero-section + section + section::before,
 .service-detail-hero-section + section + section + section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 10%;
   right: 5%;
@@ -2152,7 +2150,7 @@ video::-webkit-media-controls {
 .service-detail-hero-section + section::after,
 .service-detail-hero-section + section + section::after,
 .service-detail-hero-section + section + section + section::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 10%;
   left: 5%;
@@ -2166,7 +2164,7 @@ video::-webkit-media-controls {
 }
 
 .service-detail-hero-section::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2284,7 +2282,7 @@ video::-webkit-media-controls {
 
 /* Add subtle glow to hero content */
 .service-detail-hero-grid::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -2px;
   border-radius: 26px;
