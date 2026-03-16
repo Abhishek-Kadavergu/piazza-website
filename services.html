@@ -167,6 +167,7 @@
       .service-grid._01 .service-image {
         position: relative;
         inset: auto;
+        height: 100% !important;
         object-position: center 55%;
         transform: none;
       }
@@ -193,6 +194,7 @@
         min-height: 170px;
       }
       .service-grid._01 .service-image {
+        height: 100% !important;
         object-position: center 58%;
       }
       .sticky-scroll-spacer {
@@ -1038,6 +1040,31 @@
       background-color: #00897b;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0,70,67,0.2);
+    }
+
+    /* Keep card 1 height aligned with other cards on mobile.
+       Declared late to override the AI desktop rule above. */
+    @media (max-width: 767px) {
+      .service-grid._01 .service-image-div {
+        height: clamp(190px, 52vw, 280px);
+        min-height: 190px;
+      }
+
+      .service-grid._01 .service-image {
+        height: 100% !important;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .service-grid._01 .service-image-div {
+        height: clamp(170px, 58vw, 230px);
+        min-height: 170px;
+      }
+
+      .service-grid._01 .service-image {
+        height: 100% !important;
+      }
     }
   </style>
   <!-- Navigation -->
