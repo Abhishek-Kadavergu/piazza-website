@@ -427,22 +427,19 @@
 
       .d360-labels-row {
         position: static;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        justify-content: stretch;
+        flex-wrap: wrap;
+        overflow: visible;
         gap: 10px;
         margin: 4px 0 14px;
-        padding: 0 0 8px;
-      }
-
-      .d360-labels-row::-webkit-scrollbar {
-        display: none;
+        padding: 0;
       }
 
       .d360-label-chip {
-        flex: 0 0 auto;
+        width: 100%;
+        min-width: 0;
         font-size: 14px;
         padding: 10px 16px;
       }
