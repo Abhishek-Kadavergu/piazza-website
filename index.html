@@ -91,7 +91,7 @@
       }
 
       body.body {
-        overflow-y: visible;
+        overflow-y: auto;
       }
 
       /* ===== PREMIUM CONTACT + VISIT SECTION ===== */
@@ -1128,7 +1128,13 @@
         function syncMenuScrollLock() {
           var isMobile = window.matchMedia("(max-width: 991px)").matches;
           var menuOpen = navMenu.classList.contains("active");
-          document.body.style.overflow = isMobile && menuOpen ? "hidden" : "";
+          var shouldLockScroll = isMobile && menuOpen;
+          document.body.style.overflowX = "hidden";
+          document.documentElement.style.overflowX = "hidden";
+          document.body.style.overflowY = shouldLockScroll ? "hidden" : "auto";
+          document.documentElement.style.overflowY = shouldLockScroll
+            ? "hidden"
+            : "auto";
         }
 
         function closeMenu() {
@@ -1175,6 +1181,15 @@
         });
 
         window.addEventListener("resize", syncMenuScrollLock);
+
+        // Ensure a stale mobile-menu state never keeps scroll locked after reload/back.
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+
+        window.addEventListener("pageshow", function () {
+          syncMenuScrollLock();
+        });
+
         syncMenuScrollLock();
       })();
 
