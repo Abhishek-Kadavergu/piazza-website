@@ -348,6 +348,7 @@ kw .navbar .logo-img {
   overflow: clip;
   padding-top: 140px;
   padding-bottom: 100px;
+  box-sizing: border-box;
 }
 
 /* Smooth green fade at hero bottom edge */
